@@ -20,7 +20,7 @@
 	border-radius: 24px;
 }
 .header__searchItemInput {
-	height: 12px;
+	height: 14px;
 	border: none;
 	width: 100%;
 	padding: 10px;
@@ -47,4 +47,13 @@
 .header__navOptionTwo {
 	font-weight: 800;
 	font-size: 13px;
+}
+.header__navBasket {
+	display: flex;
+	align-items: center;
+	color: white;
+}
+.header__navBasketCount {
+	margin-left: 10px;
+	margin-right: 10px;
 }
