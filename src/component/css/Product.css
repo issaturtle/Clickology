@@ -21,12 +21,14 @@
 .product__information {
 	height: 100px;
 	margin-bottom: 15px;
-	padding-right: 100px;
+	/* padding-right: 100px; */
 }
 .product__price {
 	margin-top: 5px;
 }
 .product__handRating {
+	display: flex;
+	flex-direction: row;
 }
 .product > button {
 	background: #eec14f;

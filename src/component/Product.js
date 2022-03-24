@@ -2,20 +2,26 @@ import React from 'react';
 import './css/Product.css';
 import img from './reject.gif';
 import jinx from './fullycolored.PNG';
-function Product() {
+import longjinx from './withoutsticker.PNG';
+function Product({ id, rating, price, title, image }) {
 	return (
 		<div className="product">
+			<img src={image} alt="" />
 			<div className="product__information">
-				<p>NFT</p>
+				<p>{title}</p>
 				<p className="product__price">
 					<small>$</small>
-					<strong>11.69</strong>
+					<strong>{price}</strong>
 				</p>
 				<div className="product__handRating">
-					<p>👏</p>
+					{Array(rating)
+						.fill()
+						.map((_, i) => (
+							<p>👏</p>
+						))}
 				</div>
 			</div>
-			<img src={jinx} alt="" />
+
 			<button>Add to Basket</button>
 		</div>
 	);
