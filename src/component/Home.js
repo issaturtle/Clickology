@@ -1,9 +1,9 @@
 import React from 'react';
 import './css/Home.css';
 import Product from './Product';
-import img from './withoutsticker.PNG';
-import rej from './reject.gif';
-import sjinx from './fullycolored.PNG';
+import img from './img/withoutsticker.PNG';
+import rej from './img/reject.gif';
+import sjinx from './img/fullycolored.PNG';
 function Home() {
 	return (
 		<div className="home">

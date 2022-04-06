@@ -1,8 +1,8 @@
 import React from 'react';
 import './css/Product.css';
-import img from './reject.gif';
-import jinx from './fullycolored.PNG';
-import longjinx from './withoutsticker.PNG';
+import img from './img/reject.gif';
+import jinx from './img/fullycolored.PNG';
+import longjinx from './img/withoutsticker.PNG';
 function Product({ id, rating, price, title, image }) {
 	return (
 		<div className="product">
