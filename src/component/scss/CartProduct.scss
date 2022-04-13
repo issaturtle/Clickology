@@ -1,0 +1,27 @@
+.cartProduct {
+	display: flex;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	&__info {
+		padding-left: 20px;
+		button {
+			background-color: goldenrod;
+			border: 1px solid;
+			border-color: red;
+			color: black;
+			margin-top: 10px;
+		}
+	}
+	&__image {
+		object-fit: contain;
+		height: 180px;
+		width: 180px;
+	}
+	&__rating {
+		display: flex;
+	}
+	&__title {
+		font-size: 17px;
+		font-weight: 800;
+	}
+}

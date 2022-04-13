@@ -4,7 +4,9 @@ import img from './img/withoutsticker.PNG';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import { Link } from 'react-router-dom';
+import { useStateVal } from './ContextState';
 function Header() {
+	const [state, dispatch] = useStateVal();
 	return (
 		<div className="header">
 			<Link to="/">
@@ -35,7 +37,7 @@ function Header() {
 					<div className="header__navBasket">
 						<ShoppingBasketIcon />
 						<span className="header__navOptionTwo header__navBasketCount">
-							0
+							{state.cart?.length}
 						</span>
 					</div>
 				</Link>

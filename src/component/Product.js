@@ -3,7 +3,21 @@ import './css/Product.css';
 import img from './img/reject.gif';
 import jinx from './img/fullycolored.PNG';
 import longjinx from './img/withoutsticker.PNG';
+import { useStateVal } from './ContextState';
 function Product({ id, rating, price, title, image }) {
+	const [state, dispatch] = useStateVal();
+	function addCart() {
+		dispatch({
+			type: 'ADD_CART',
+			item: {
+				id: id,
+				title: title,
+				image: image,
+				price: price,
+				rating: rating,
+			},
+		});
+	}
 	return (
 		<div className="product">
 			<img src={image} alt="" />
@@ -22,7 +36,7 @@ function Product({ id, rating, price, title, image }) {
 				</div>
 			</div>
 
-			<button>Add to Basket</button>
+			<button onClick={addCart}>Add to Cart</button>
 		</div>
 	);
 }
