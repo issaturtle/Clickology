@@ -15,8 +15,10 @@ function Checkout() {
 			<div className="checkOut__Items">
 				<img src={img} alt="" className="checkOut__Ad" />
 				<div>
-					<h2 className="checkOut__title">Your Cart</h2>
-					{/* {state.cart.map((item) => (
+					<h2 className="checkOut__title">
+						Your Cart ({state.cart.length} items){' '}
+					</h2>
+					{state.cart.map((item) => (
 						<CartProduct
 							id={item.id}
 							title={item.title}
@@ -24,14 +26,7 @@ function Checkout() {
 							image={item.image}
 							rating={item.rating}
 						/>
-					))} */}
-					<CartProduct
-						id="1234"
-						title="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-						image={img2}
-						price={69}
-						rating={5}
-					/>
+					))}
 				</div>
 			</div>
 		</div>

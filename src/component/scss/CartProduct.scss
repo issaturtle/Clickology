@@ -2,20 +2,31 @@
 	display: flex;
 	margin-bottom: 20px;
 	margin-top: 20px;
+	align-items: center;
+
 	&__info {
+		display: flex;
+		flex-direction: column;
 		padding-left: 20px;
 		button {
-			background-color: goldenrod;
-			border: 1px solid;
-			border-color: red;
+			// background-color: lightgray;
+			// border: 1px solid;
+			// border-color: 2px 2px lightgray;
 			color: black;
-			margin-top: 10px;
+			margin-top: 97px;
+			// border-radius: 4px;
+			// box-shadow: 2px 2px lightgray;
+
+			border: 0px;
+			text-decoration: underline;
+			display: inline-block;
+			background: none;
 		}
 	}
 	&__image {
 		object-fit: contain;
 		height: 180px;
-		width: 180px;
+		width: 200px;
 	}
 	&__rating {
 		display: flex;
@@ -24,4 +35,8 @@
 		font-size: 17px;
 		font-weight: 800;
 	}
+}
+.nextItem {
+	width: 100%;
+	border: 1px solid lightgrey;
 }

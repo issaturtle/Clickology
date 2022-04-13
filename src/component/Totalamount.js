@@ -25,10 +25,11 @@ function Totalamount() {
 	// });
 	return (
 		<div className="totalAmount">
+			<h2>Your shopping cart</h2>
 			<CurrencyFormat
 				renderText={(value) => (
 					<p>
-						subtotal ({state.cart.length} items): <strong>{value}</strong>
+						Subtotal ({state.cart.length} items): <strong>{value}</strong>
 					</p>
 				)}
 				decimalScale={2}
@@ -37,7 +38,11 @@ function Totalamount() {
 				thousandSeparator={true}
 				prefix={'$'}
 			/>
-			<button>Proceed to checkout</button>
+			<p>Tax (7.25%):</p>
+			<p>Estimated Total: </p>
+			<button>
+				<h4>Proceed to checkout</h4>
+			</button>
 		</div>
 	);
 }

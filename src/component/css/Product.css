@@ -31,9 +31,17 @@
 	flex-direction: row;
 }
 .product > button {
-	background: #eec14f;
+	background: #f2c973;
 	border: 1px solid;
-	border-color: #a88734 #846a29;
+	border-radius: 5px;
+	height: 30px;
+	/* border-color: #a88734 #846a29; */
 	color: black;
 	margin-top: 10px;
+	width: 200px;
+	box-shadow: 0px 4px 14px #f2c973;
+}
+.product > button:hover {
+	background-color: #eec262;
+	transition: 0.2s background-color ease-in-out;
 }
