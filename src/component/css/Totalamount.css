@@ -1,14 +1,7 @@
 .totalAmount {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-between;
   height: 300px;
   width: 300px;
   padding: 20px;
@@ -18,7 +11,6 @@
   background-color: #f3f3f3;
   margin-right: 20px;
 }
-
 .totalAmount button {
   background: #f2c973;
   border: 1px solid;
@@ -27,13 +19,9 @@
   /* border-color: #a88734 #846a29; */
   color: black;
   margin-top: 10px;
-  -webkit-box-shadow: 0px 4px 14px #f2c973;
-          box-shadow: 0px 4px 14px #f2c973;
+  box-shadow: 0px 4px 14px #f2c973;
 }
-
 .totalAmount button:hover {
   background-color: #eec262;
-  -webkit-transition: 0.2s background-color ease-in-out;
   transition: 0.2s background-color ease-in-out;
-}
-/*# sourceMappingURL=Totalamount.css.map */
+}/*# sourceMappingURL=Totalamount.css.map */

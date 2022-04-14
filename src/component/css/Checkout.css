@@ -1,27 +1,21 @@
 .checkOut {
   padding: 20px;
   margin-top: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   background-color: white;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
 }
-
 .checkOut__Ad {
   width: 100%;
   margin-bottom: 10px;
 }
-
 .checkOut__title {
   margin-right: 10px;
   padding: 10px;
   border-bottom: 3px solid black;
 }
-
 .checkOut__Price {
   padding-left: 20px;
-}
-/*# sourceMappingURL=Checkout.css.map */
+}/*# sourceMappingURL=Checkout.css.map */
