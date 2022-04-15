@@ -1,6 +1,7 @@
 //Global store for application
 export const initState = {
 	cart: [],
+	userN: null,
 };
 export const calculateCart = (cart) => {
 	let val = 0;
@@ -11,6 +12,11 @@ export const calculateCart = (cart) => {
 };
 const reducer = (state, action) => {
 	switch (action.type) {
+		case 'SET_STATE_USER':
+			return {
+				...state,
+				userN: action.userN,
+			};
 		case 'ADD_CART':
 			return {
 				//keep original state, add item into basket
@@ -29,6 +35,7 @@ const reducer = (state, action) => {
 				...state,
 				cart: newCart,
 			};
+
 		default:
 			return state;
 	}
