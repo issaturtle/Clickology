@@ -40,3 +40,46 @@
 	width: 100%;
 	border: 1px solid lightgrey;
 }
+.notif {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 300px;
+	background-color: lightgray;
+	padding: 20px;
+	border-radius: 10px;
+	&__name {
+	}
+
+	&__btn {
+		align-items: center;
+		margin-left: 10px;
+
+		border: 0px;
+		padding-top: 0px;
+	}
+}
+@keyframes myAnimation {
+	0% {
+		opacity: 1;
+		// transform: rotateX(90deg);
+	}
+	50% {
+		opacity: 0.5;
+		// transform: rotateX(0deg);
+	}
+	100% {
+		visibility: hidden;
+		opacity: 0;
+		transform: rotateX(90deg);
+	}
+}
+
+.myelement {
+	animation-name: myAnimation;
+	animation-duration: 3000ms;
+	animation-fill-mode: forwards;
+}
+.displayNone {
+	display: none;
+}

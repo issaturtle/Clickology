@@ -31,6 +31,7 @@ const reducer = (state, action) => {
 			if (index >= 0) {
 				newCart.splice(index, 1);
 			}
+
 			return {
 				...state,
 				cart: newCart,

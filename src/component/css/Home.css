@@ -19,3 +19,13 @@
 	margin-right: 5px;
 	margin-left: 5px;
 }
+.notifContainer {
+	margin-left: 30px;
+	position: absolute;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 10px;
+	column-gap: 10px;
+	z-index: 3;
+	padding-top: 10px;
+}

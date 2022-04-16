@@ -4,8 +4,9 @@ import img from './img/reject.gif';
 import jinx from './img/fullycolored.PNG';
 import longjinx from './img/withoutsticker.PNG';
 import { useStateVal } from './ContextState';
-function Product({ id, rating, price, title, image }) {
+function Product({ id, rating, price, title, image, test }) {
 	const [state, dispatch] = useStateVal();
+	const [added, setstatus] = useStateVal(false);
 	function addCart() {
 		dispatch({
 			type: 'ADD_CART',
@@ -17,9 +18,10 @@ function Product({ id, rating, price, title, image }) {
 				rating: rating,
 			},
 		});
+		test(title);
 	}
 	return (
-		<div className="product">
+		<div className="product zoom">
 			<img src={image} alt="" />
 			<div className="product__information">
 				<p>{title}</p>

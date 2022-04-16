@@ -34,4 +34,60 @@
 .nextItem {
   width: 100%;
   border: 1px solid lightgrey;
+}
+
+.notif {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+  background-color: lightgray;
+  padding: 20px;
+  border-radius: 10px;
+}
+.notif__btn {
+  align-items: center;
+  margin-left: 10px;
+  border: 0px;
+  padding-top: 0px;
+}
+
+@-webkit-keyframes myAnimation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+    transform: rotateX(90deg);
+  }
+}
+
+@keyframes myAnimation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+    transform: rotateX(90deg);
+  }
+}
+.myelement {
+  -webkit-animation-name: myAnimation;
+          animation-name: myAnimation;
+  -webkit-animation-duration: 3000ms;
+          animation-duration: 3000ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.displayNone {
+  display: none;
 }/*# sourceMappingURL=CartProduct.css.map */
