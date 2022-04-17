@@ -30,7 +30,6 @@ function AddedNotification({
 				className="notif__btn"
 				onClick={() => {
 					const promise = new Promise(() => {
-						console.log('prom');
 						document.getElementById('temp').classList.add('myelement');
 					}).then(() => {
 						return removeNotif(name);

@@ -45,7 +45,7 @@ function Header() {
 						<span className="header__navOptionTwo">Prime</span>
 					</div>
 				</div>
-				<Link to="/checkOut">
+				<Link to="/checkout">
 					<div className="header__navBasket">
 						<ShoppingBasketIcon />
 						<span className="header__navOptionTwo header__navBasketCount">

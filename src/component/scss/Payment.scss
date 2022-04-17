@@ -1,0 +1,48 @@
+//use flex instead of grid?
+// follow home.css to create resizable products?
+.payment {
+	display: grid;
+	// grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+
+	justify-content: space-between;
+
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-gap: 1px;
+	grid-auto-rows: minmax(180px, auto);
+	grid-auto-flow: dense;
+	padding: 30px;
+	padding-left: 4rem;
+	padding-right: 4rem;
+	box-sizing: border-box;
+
+	&__ContainerLeft {
+		grid-column-end: span 1;
+		grid-row-end: span 1;
+		padding: 1.5rem;
+		padding-top: 2rem;
+
+		background-color: white;
+		h1 {
+			padding: 10px;
+			padding-left: 0px;
+			border-bottom: 1px solid lightgray;
+		}
+	}
+	&__ContainerRight {
+		display: flex;
+		justify-content: center;
+		// grid-column-end: span 1;
+		grid-row-end: span 1;
+		background-color: rgb(234, 237, 237);
+		padding: 1.5rem;
+		padding-top: 2rem;
+
+		h1 {
+			padding: 10px;
+			padding-left: 0px;
+		}
+		height: 100px;
+	}
+}

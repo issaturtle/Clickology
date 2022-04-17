@@ -5,7 +5,9 @@ import { useStateVal } from './ContextState';
 import { useState, useEffect } from 'react';
 import { render } from 'react-dom';
 import { calculateCart } from './Reducer';
+import { useNavigate } from 'react-router-dom';
 function Totalamount() {
+	const navigateHistory = useNavigate();
 	const [state, dispatch] = useStateVal();
 	// let [value, setVal] = useState(0);
 	// const cartTotal = () => {
@@ -40,7 +42,7 @@ function Totalamount() {
 			/>
 			<p>Tax (7.25%):</p>
 			<p>Estimated Total: </p>
-			<button>
+			<button onClick={(e) => navigateHistory('/payment')}>
 				<h4>Proceed to checkout</h4>
 			</button>
 		</div>

@@ -89,6 +89,22 @@ function Home() {
 							image={img}
 							rating={1}
 						/>
+						<Product
+							id="2"
+							rating={5}
+							price={11.69}
+							title="temp1"
+							image={rej}
+							test={test}
+						/>
+						<Product
+							id="2"
+							rating={5}
+							price={11.69}
+							title="temp1"
+							image={rej}
+							test={test}
+						/>
 					</div>
 					<div className="home__contentRow">
 						<Product
