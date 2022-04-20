@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import CartProduct from './CartProduct';
 import { useStateVal } from './ContextState';
 import './css/Payment.css';
+import { calculateCart } from './Reducer';
+import CurrencyFormat from 'react-currency-format';
 function Payment() {
 	const [state, dispatch] = useStateVal();
 	return (
@@ -34,13 +36,24 @@ function Payment() {
 				<div className="payment__Details">
 					<div className="payment__Title">
 						<h1>Your Total</h1>
+						<p>
+							<CurrencyFormat
+								renderText={(value) => (
+									<p>
+										Subtotal ({state.cart.length} items):{' '}
+										<strong>{value}</strong>
+									</p>
+								)}
+								decimalScale={2}
+								value={calculateCart(state.cart)}
+								displayType={'text'}
+								thousandSeparator={true}
+								prefix={'$'}
+							/>
+						</p>
+						<p>Tax</p>
 					</div>
-					<div className="total">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore ab,
-						ipsum exercitationem facilis corrupti quidem in itaque dolorum
-						numquam. Quis tempora nesciunt, et natus officiis unde ad qui rem
-						at!
-					</div>
+					<div className="total"></div>
 					<div className="payment__Title">
 						<h1>Your Cart</h1>
 					</div>

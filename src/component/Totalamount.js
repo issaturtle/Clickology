@@ -40,8 +40,6 @@ function Totalamount() {
 				thousandSeparator={true}
 				prefix={'$'}
 			/>
-			<p>Tax (7.25%):</p>
-			<p>Estimated Total: </p>
 			<button onClick={(e) => navigateHistory('/payment')}>
 				<h4>Proceed to checkout</h4>
 			</button>

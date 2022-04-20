@@ -2,6 +2,7 @@
 export const initState = {
 	cart: [],
 	userN: null,
+	valCart: 0,
 };
 export const calculateCart = (cart) => {
 	let val = 0;
