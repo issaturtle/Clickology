@@ -1,38 +1,65 @@
+$gold: #f2c973;
+$gold_hover: #eec262;
 //use flex instead of grid?
 // follow home.css to create resizable products?
 .payment {
-	display: grid;
+	// display: grid;
 	// grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
 
 	justify-content: space-between;
 
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr 1fr;
-	grid-gap: 1px;
-	grid-auto-rows: minmax(180px, auto);
-	grid-auto-flow: dense;
+	// display: grid;
+	// grid-template-columns: 1fr 1fr;
+	// grid-template-rows: 1fr 1fr;
+	// grid-gap: 1px;
+	// grid-auto-rows: minmax(180px, auto);
+	// grid-auto-flow: dense;
 	padding: 30px;
 	padding-left: 4rem;
 	padding-right: 4rem;
-	box-sizing: border-box;
-
+	// box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	margin-inline: auto;
+	padding-inline: 30px;
 	&__ContainerLeft {
-		grid-column-end: span 1;
-		grid-row-end: span 1;
-		padding: 1.5rem;
+		// grid-column-end: span 1;
+		// grid-row-end: span 1;
+		padding-inline: 100px;
 		padding-top: 2rem;
-
+		width: 400px;
+		flex-grow: 4;
 		background-color: white;
 		h1 {
 			padding: 10px;
 			padding-left: 0px;
 			border-bottom: 1px solid lightgray;
 		}
+		&__Details {
+			padding-top: 25px;
+			padding-bottom: 2px;
+			// display: flex;
+			// justify-content: space-between;
+		}
+		.form {
+			padding-bottom: 10px;
+		}
+		.disappear {
+		}
+		.payment__Form__Input {
+			padding: 0px;
+			border: 0px;
+			border-bottom: 1px solid black;
+			border-radius: 0px;
+		}
+	}
+	&__System {
+		padding-top: 10px;
 	}
 	&__ContainerRight {
+		flex-grow: 1;
 		display: flex;
-		justify-content: center;
+		// justify-content: center;
 		// grid-column-end: span 1;
 		grid-row-end: span 1;
 		background-color: rgb(234, 237, 237);
@@ -45,4 +72,74 @@
 		}
 		height: 100px;
 	}
+	&__Title {
+		display: flex;
+		flex-direction: column;
+		justify-content: left;
+
+		p {
+			padding-bottom: 5px;
+		}
+		.lastFee {
+			border-bottom: 1px solid lightgray;
+			padding-bottom: 10px;
+		}
+	}
+	&__block {
+		display: flex;
+		justify-content: space-between;
+		p {
+			padding-bottom: 5px;
+		}
+		// .lastFee {
+		// 	border-bottom: 1px solid lightgray;
+		// 	padding-bottom: 10px;
+		// }
+		&__details {
+			padding-right: 50px;
+			width: fit-content;
+			display: flex;
+		}
+	}
+	&__Prices {
+		border-collapse: collapse;
+		td {
+			padding-bottom: 10px;
+		}
+		&__Topics {
+			padding-right: 300px;
+			padding-bottom: 10px;
+		}
+		&__Nums {
+			text-align: right;
+			padding-right: 0px;
+			&__Last {
+				text-align: right;
+				border-bottom: 1px solid lightgray;
+			}
+		}
+		&__Total {
+			// border-top: 1px solid gray;
+			color: lightcoral;
+		}
+	}
+	&__Cartitems {
+		min-width: calc(100% - 4rem);
+		max-width: 400px;
+	}
+	&__Orderbtn {
+		background-color: rgb(104, 194, 224);
+		width: 100%;
+		color: $gold;
+		border-radius: 5px;
+		height: 30px;
+		margin-top: 10px;
+	}
+	// &__Details {
+	// 	display: flex;
+	// 	justify-content: space-between;
+	// }
+}
+.separator {
+	border-bottom: 1px solid lightgray;
 }

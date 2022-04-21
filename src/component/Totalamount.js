@@ -25,6 +25,18 @@ function Totalamount() {
 	// 		value += element.price;
 	// 	});
 	// });
+	const checkLoggedIn = () => {
+		console.log('hi');
+		console.log(state.userN);
+		if (state.userN != null && state.cart.length >= 1) {
+			navigateHistory('/payment');
+		} else if (state.cart.length >= 1 && state.userN == null) {
+			navigateHistory('/login');
+		} else {
+			document.getElementById('temp').disabled = true;
+			document.getElementById('temp').classList.add('disabled');
+		}
+	};
 	return (
 		<div className="totalAmount">
 			<h2>Your shopping cart</h2>
@@ -40,9 +52,19 @@ function Totalamount() {
 				thousandSeparator={true}
 				prefix={'$'}
 			/>
-			<button onClick={(e) => navigateHistory('/payment')}>
+			{}
+			{state.cart.length === 0 ? (
+				<button onClick={checkLoggedIn} disabled className="disabled">
+					<h4>Proceed to checkout</h4>
+				</button>
+			) : (
+				<button onClick={checkLoggedIn}>
+					<h4>Proceed to checkout</h4>
+				</button>
+			)}
+			{/* <button id="temp" onClick={checkLoggedIn}>
 				<h4>Proceed to checkout</h4>
-			</button>
+			</button> */}
 		</div>
 	);
 }

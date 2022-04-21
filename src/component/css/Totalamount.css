@@ -24,4 +24,8 @@
 .totalAmount button:hover {
   background-color: #eec262;
   transition: 0.2s background-color ease-in-out;
+}
+.totalAmount button.disabled {
+  background-color: gray;
+  box-shadow: none;
 }/*# sourceMappingURL=Totalamount.css.map */

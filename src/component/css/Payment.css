@@ -1,22 +1,18 @@
 .payment {
-  display: grid;
   justify-content: space-between;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-gap: 1px;
-  grid-auto-rows: minmax(180px, auto);
-  grid-auto-flow: dense;
   padding: 30px;
   padding-left: 4rem;
   padding-right: 4rem;
-  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  margin-inline: auto;
+  padding-inline: 30px;
 }
 .payment__ContainerLeft {
-  grid-column-end: span 1;
-  grid-row-end: span 1;
-  padding: 1.5rem;
+  padding-inline: 100px;
   padding-top: 2rem;
+  width: 400px;
+  flex-grow: 4;
   background-color: white;
 }
 .payment__ContainerLeft h1 {
@@ -24,9 +20,25 @@
   padding-left: 0px;
   border-bottom: 1px solid lightgray;
 }
+.payment__ContainerLeft__Details {
+  padding-top: 25px;
+  padding-bottom: 2px;
+}
+.payment__ContainerLeft .form {
+  padding-bottom: 10px;
+}
+.payment__ContainerLeft .payment__Form__Input {
+  padding: 0px;
+  border: 0px;
+  border-bottom: 1px solid black;
+  border-radius: 0px;
+}
+.payment__System {
+  padding-top: 10px;
+}
 .payment__ContainerRight {
+  flex-grow: 1;
   display: flex;
-  justify-content: center;
   grid-row-end: span 1;
   background-color: rgb(234, 237, 237);
   padding: 1.5rem;
@@ -36,4 +48,67 @@
 .payment__ContainerRight h1 {
   padding: 10px;
   padding-left: 0px;
+}
+.payment__Title {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+.payment__Title p {
+  padding-bottom: 5px;
+}
+.payment__Title .lastFee {
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 10px;
+}
+.payment__block {
+  display: flex;
+  justify-content: space-between;
+}
+.payment__block p {
+  padding-bottom: 5px;
+}
+.payment__block__details {
+  padding-right: 50px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+}
+.payment__Prices {
+  border-collapse: collapse;
+}
+.payment__Prices td {
+  padding-bottom: 10px;
+}
+.payment__Prices__Topics {
+  padding-right: 300px;
+  padding-bottom: 10px;
+}
+.payment__Prices__Nums {
+  text-align: right;
+  padding-right: 0px;
+}
+.payment__Prices__Nums__Last {
+  text-align: right;
+  border-bottom: 1px solid lightgray;
+}
+.payment__Prices__Total {
+  color: lightcoral;
+}
+.payment__Cartitems {
+  min-width: calc(100% - 4rem);
+  max-width: 400px;
+}
+.payment__Orderbtn {
+  background-color: rgb(104, 194, 224);
+  width: 100%;
+  color: #f2c973;
+  border-radius: 5px;
+  height: 30px;
+  margin-top: 10px;
+}
+
+.separator {
+  border-bottom: 1px solid lightgray;
 }/*# sourceMappingURL=Payment.css.map */

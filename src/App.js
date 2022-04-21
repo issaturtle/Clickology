@@ -2,13 +2,18 @@ import './App.css';
 import Header from './component/Header';
 import Home from './component/Home';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import Checkout from './component/Checkout';
 import Login from './component/Login';
 import { useEffect } from 'react';
 import { authen } from './component/firebase';
 import { useStateVal } from './component/ContextState';
 import Payment from './component/Payment';
-
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
+const stripeClient = loadStripe(
+	'pk_test_51KquBTJ0wGZ0mBp51JdztrUS50BXLMqIyOIyw3RAMVgjMnzSLLe4lqgvZqt7SP2vIaZaUZufqrup5grkKksgHg2d00KNhxo7OL'
+);
 function App() {
 	const [{ userN }, dispatch] = useStateVal();
 	useEffect(() => {
@@ -59,7 +64,9 @@ function App() {
 						element={
 							<>
 								<Header />
-								<Payment />
+								<Elements stripe={stripeClient}>
+									<Payment />
+								</Elements>
 							</>
 						}
 					/>

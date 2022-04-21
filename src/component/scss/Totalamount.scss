@@ -34,5 +34,9 @@
 			background-color: #eec262;
 			transition: 0.2s background-color ease-in-out;
 		}
+		&.disabled {
+			background-color: gray;
+			box-shadow: none;
+		}
 	}
 }
