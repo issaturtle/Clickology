@@ -1,12 +1,17 @@
 import React from 'react';
-import './css/Product.css';
-import img from './img/reject.gif';
-import jinx from './img/fullycolored.PNG';
-import longjinx from './img/withoutsticker.PNG';
-import { useStateVal } from './ContextState';
-function Product({ id, rating, price, title, image, test }) {
+import '../../css/Product.css';
+import img from '../../img/reject.gif';
+import jinx from '../../img/fullycolored.PNG';
+import longjinx from '../../img/withoutsticker.PNG';
+import { useStateVal } from '../PropStore/ContextState';
+/**
+ *
+ * @param {id, rating, price, title, image, addedToCartNotif }
+ * @returns A product on the homepage
+ */
+function Product({ id, rating, price, title, image, addedToCartNotif }) {
 	const [state, dispatch] = useStateVal();
-	const [added, setstatus] = useStateVal(false);
+
 	function addCart() {
 		dispatch({
 			type: 'ADD_CART',
@@ -18,7 +23,7 @@ function Product({ id, rating, price, title, image, test }) {
 				rating: rating,
 			},
 		});
-		test(title);
+		addedToCartNotif(title);
 	}
 	return (
 		<div className="product zoom">

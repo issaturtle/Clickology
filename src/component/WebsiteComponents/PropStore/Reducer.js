@@ -1,9 +1,10 @@
-//Global store for application
+//Global store for application, initial state
 export const initState = {
 	cart: [],
 	userN: null,
 	valCart: 0,
 };
+
 export const calculateCart = (cart) => {
 	let val = 0;
 	cart.forEach((item) => {
@@ -11,6 +12,12 @@ export const calculateCart = (cart) => {
 	});
 	return val;
 };
+/**
+ *
+ * @param {the state of the store} state
+ * @param {action of the user} action
+ * @returns a few functions to manipulate carts
+ */
 const reducer = (state, action) => {
 	switch (action.type) {
 		case 'SET_STATE_USER':

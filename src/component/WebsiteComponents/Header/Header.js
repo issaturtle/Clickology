@@ -1,13 +1,21 @@
 import React from 'react';
-import './css/Header.css';
-import img from './img/withoutsticker.PNG';
+import '../../css/Header.css';
+import img from '../../img/withoutsticker.PNG';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import { Link } from 'react-router-dom';
-import { useStateVal } from './ContextState';
-import { authen } from './firebase';
+import { useStateVal } from '../PropStore/ContextState';
+import { authen } from '../LoginPage/firebase';
+/**
+ *
+ * @returns The navBar of the website
+ */
 function Header() {
 	const [state, dispatch] = useStateVal();
+
+	/**
+	 * update user status using firebase
+	 */
 	const callAuthen = () => {
 		if (state.userN) {
 			authen.signOut();

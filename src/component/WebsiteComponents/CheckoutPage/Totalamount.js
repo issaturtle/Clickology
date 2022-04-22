@@ -1,30 +1,19 @@
 import React from 'react';
-import './css/Totalamount.css';
+import '../../css/Totalamount.css';
 import CurrencyFormat from 'react-currency-format';
-import { useStateVal } from './ContextState';
+import { useStateVal } from '../PropStore/ContextState';
 import { useState, useEffect } from 'react';
 import { render } from 'react-dom';
-import { calculateCart } from './Reducer';
+import { calculateCart } from '../PropStore/Reducer';
 import { useNavigate } from 'react-router-dom';
+/**
+ * totalAmount component that returns the total amount and the payment button
+ * @returns the total amount in the checkout page
+ */
 function Totalamount() {
 	const navigateHistory = useNavigate();
 	const [state, dispatch] = useStateVal();
-	// let [value, setVal] = useState(0);
-	// const cartTotal = () => {
-	// 	state.basket.forEach((element) => {
-	// 		value += element.price;
-	// 	});
-	// 	setVal(value);
-	// };
-	// useEffect(() => {
-	// 	console.log('render');
-	// 	cartTotal();
-	// }, []);
-	// useEffect(() => {
-	// 	state.basket.forEach((element) => {
-	// 		value += element.price;
-	// 	});
-	// });
+
 	const checkLoggedIn = () => {
 		console.log('hi');
 		console.log(state.userN);
@@ -62,9 +51,6 @@ function Totalamount() {
 					<h4>Proceed to checkout</h4>
 				</button>
 			)}
-			{/* <button id="temp" onClick={checkLoggedIn}>
-				<h4>Proceed to checkout</h4>
-			</button> */}
 		</div>
 	);
 }

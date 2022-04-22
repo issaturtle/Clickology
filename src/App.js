@@ -1,14 +1,14 @@
 import './App.css';
-import Header from './component/Header';
-import Home from './component/Home';
+import Header from './component/WebsiteComponents/Header/Header';
+import Home from './component/WebsiteComponents/HomePage/Home';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import Checkout from './component/Checkout';
-import Login from './component/Login';
+import Checkout from './component/WebsiteComponents/CheckoutPage/Checkout';
+import Login from './component/WebsiteComponents/LoginPage/Login';
 import { useEffect } from 'react';
-import { authen } from './component/firebase';
-import { useStateVal } from './component/ContextState';
-import Payment from './component/Payment';
+import { authen } from './component/WebsiteComponents/LoginPage/firebase';
+import { useStateVal } from './component/WebsiteComponents/PropStore/ContextState';
+import Payment from './component/WebsiteComponents/PaymentPage/Payment';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 const stripeClient = loadStripe(

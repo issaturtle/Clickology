@@ -1,8 +1,16 @@
 import React from 'react';
-import { useStateVal } from './ContextState';
-import './css/CartProduct.css';
+import { useStateVal } from '../PropStore/ContextState';
+import '../../css/CartProduct.css';
+/**
+ *
+ * @param {id, rating,price, title, image}
+ * @returns the product in cart within checkout page
+ */
 function CartProduct({ id, rating, price, title, image }) {
+	//"store" for props
 	const [state, dispatch] = useStateVal();
+
+	//send request to "store" to remove item from cart
 	const removeCart = () => {
 		dispatch({
 			type: 'REMOVE_CART',

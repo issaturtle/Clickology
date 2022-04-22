@@ -1,14 +1,15 @@
 import ShoppingBasket from '@mui/icons-material/ShoppingBasket';
 import React, { useEffect, useState } from 'react';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
-import CartProduct from './CartProduct';
-import { useStateVal } from './ContextState';
-import './css/Payment.css';
-import { calculateCart } from './Reducer';
+import CartProduct from '../CheckoutPage/CartProduct';
+import { useStateVal } from '../PropStore/ContextState';
+import '../../css/Payment.css';
+import { calculateCart } from '../PropStore/Reducer';
+import stripeAxios from './StripeAxios';
 import CurrencyFormat from 'react-currency-format';
 import { Button, Form } from 'react-bootstrap';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
-import stripeAxios from './StripeAxios';
+
 function Payment() {
 	const [state, dispatch] = useStateVal();
 	const [userError, setuserError] = useState(null);

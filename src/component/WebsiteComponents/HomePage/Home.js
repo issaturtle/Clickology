@@ -1,16 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import './css/Home.css';
+import '../../css/Home.css';
 import Product from './Product';
-import img from './img/withoutsticker.PNG';
-import rej from './img/reject.gif';
-import sjinx from './img/fullycolored.PNG';
+import img from '../../img/withoutsticker.PNG';
+import rej from '../../img/reject.gif';
+import sjinx from '../../img/fullycolored.PNG';
 import AddedNotification from './AddedNotification';
 
+/**
+ * Components used: Product.js, AddedNotification.js,
+ * @returns the homepage with using
+ */
 function Home() {
 	const [notifList, setList] = useState([]);
 
-	const test = (name) => {
+	const addToNotificationList = (name) => {
 		setList((oldArray) => {
 			return [...oldArray, name];
 		});
@@ -50,7 +54,7 @@ function Home() {
 							price={11.69}
 							title="NFT"
 							image={rej}
-							test={test}
+							addedToCartNotif={addToNotificationList}
 						/>
 						<Product
 							id="2"
@@ -58,7 +62,7 @@ function Home() {
 							price={11.69}
 							title="temp1"
 							image={rej}
-							test={test}
+							addedToCartNotif={addToNotificationList}
 						/>
 					</div>
 					{/* <div className="home__contentRow">
@@ -72,7 +76,7 @@ function Home() {
 							price={6969}
 							image={img}
 							rating={10}
-							test={test}
+							addedToCartNotif={addToNotificationList}
 						/>
 
 						<Product
@@ -81,6 +85,7 @@ function Home() {
 							price={6933}
 							image={sjinx}
 							rating={1}
+							addedToCartNotif={addToNotificationList}
 						/>
 						<Product
 							id="4"
@@ -88,6 +93,7 @@ function Home() {
 							price={3}
 							image={img}
 							rating={1}
+							addedToCartNotif={addToNotificationList}
 						/>
 						<Product
 							id="2"
@@ -95,7 +101,7 @@ function Home() {
 							price={11.69}
 							title="temp1"
 							image={rej}
-							test={test}
+							addedToCartNotif={addToNotificationList}
 						/>
 						<Product
 							id="2"
@@ -103,7 +109,7 @@ function Home() {
 							price={11.69}
 							title="temp1"
 							image={rej}
-							test={test}
+							addedToCartNotif={addToNotificationList}
 						/>
 					</div>
 					<div className="home__contentRow">
@@ -113,6 +119,7 @@ function Home() {
 							price={6969}
 							image={img}
 							rating={10}
+							addedToCartNotif={addToNotificationList}
 						/>
 					</div>
 				</div>

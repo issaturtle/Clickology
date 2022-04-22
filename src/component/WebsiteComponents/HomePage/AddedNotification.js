@@ -1,8 +1,13 @@
 import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import './css/CartProduct.css';
-
+import '../../css/CartProduct.css';
+/**
+ * notification function that displayed on screen if clicked added to cart
+ * @param {*} param0
+ * @returns a notification that shows which item was added in cart
+ */
 function AddedNotification({
+	//props: name = productName, removeNotif = func(), messsages = msg list, setList = func()
 	name,
 	removeNotif,
 	messages = [],
@@ -10,6 +15,7 @@ function AddedNotification({
 	setList,
 }) {
 	const msg = [...messages];
+	//if clicked (x) in notification, remove msg from the array
 	useEffect(() => {
 		const timer = setTimeout(() => {
 			if (msg.length) {
