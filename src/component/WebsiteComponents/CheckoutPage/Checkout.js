@@ -1,10 +1,12 @@
 import React from 'react';
+
 import CartProduct from './CartProduct';
 import { useStateVal } from '../PropStore/ContextState';
+import Totalamount from './Totalamount';
+
 import '../../css/Checkout.css';
 import img from '../../img/withoutsticker.PNG';
 import img2 from '../../img/fullycolored.PNG';
-import Totalamount from './Totalamount';
 
 /**
  * @returns the checkout page component

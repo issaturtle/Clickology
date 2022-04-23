@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import '../../css/Home.css';
+
 import Product from './Product';
+import AddedNotification from './AddedNotification';
+
+import '../../css/Home.css';
 import img from '../../img/withoutsticker.PNG';
 import rej from '../../img/reject.gif';
 import sjinx from '../../img/fullycolored.PNG';
-import AddedNotification from './AddedNotification';
-
 /**
  * Components used: Product.js, AddedNotification.js,
  * @returns the homepage with using

@@ -1,9 +1,11 @@
 import React from 'react';
+
+import { useStateVal } from '../PropStore/ContextState';
+
 import '../../css/Product.css';
 import img from '../../img/reject.gif';
 import jinx from '../../img/fullycolored.PNG';
 import longjinx from '../../img/withoutsticker.PNG';
-import { useStateVal } from '../PropStore/ContextState';
 /**
  *
  * @param {id, rating, price, title, image, addedToCartNotif }

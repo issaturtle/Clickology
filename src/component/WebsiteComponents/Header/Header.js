@@ -1,11 +1,13 @@
 import React from 'react';
-import '../../css/Header.css';
-import img from '../../img/withoutsticker.PNG';
+import { Link } from 'react-router-dom';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
-import { Link } from 'react-router-dom';
+
 import { useStateVal } from '../PropStore/ContextState';
 import { authen } from '../LoginPage/firebase';
+
+import '../../css/Header.css';
+import img from '../../img/withoutsticker.PNG';
 /**
  *
  * @returns The navBar of the website
