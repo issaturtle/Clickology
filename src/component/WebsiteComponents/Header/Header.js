@@ -43,18 +43,20 @@ function Header() {
 						</span>
 					</div>
 				</Link>
-				<div className="header__navOption">
+				<Link to="/order">
 					<div className="header__navOption">
-						<span className="header__navOptionOne">Return</span>
-						<span className="header__navOptionTwo">sign in</span>
+						<div className="header__navOption">
+							<span className="header__navOptionOne">Order</span>
+							<span className="header__navOptionTwo">History </span>
+						</div>
 					</div>
-				</div>
-				<div className="header__navOption">
+				</Link>
+				{/* <div className="header__navOption">
 					<div className="header__navOption">
 						<span className="header__navOptionOne">Your</span>
 						<span className="header__navOptionTwo">Prime</span>
 					</div>
-				</div>
+				</div> */}
 				<Link to="/checkout">
 					<div className="header__navBasket">
 						<ShoppingBasketIcon />

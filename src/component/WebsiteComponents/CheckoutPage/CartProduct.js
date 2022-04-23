@@ -8,7 +8,7 @@ import '../../css/CartProduct.css';
  * @param {id, rating,price, title, image}
  * @returns the product in cart within checkout page
  */
-function CartProduct({ id, rating, price, title, image }) {
+function CartProduct({ id, rating, price, title, image, hideRemove = false }) {
 	//"store" for props
 	const [state, dispatch] = useStateVal();
 
@@ -40,9 +40,13 @@ function CartProduct({ id, rating, price, title, image }) {
 							<small>$</small>
 							<strong>{price}</strong>
 						</p>
-						<button onClick={removeCart} className="cartProduct__btn">
-							Remove from cart
-						</button>
+						{hideRemove === true ? (
+							''
+						) : (
+							<button onClick={removeCart} className="cartProduct__btn">
+								Remove from cart
+							</button>
+						)}
 					</div>
 				</div>
 			</div>

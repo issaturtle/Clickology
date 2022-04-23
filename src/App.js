@@ -1,39 +1,62 @@
-import './App.css';
-import Header from './component/WebsiteComponents/Header/Header';
-import Home from './component/WebsiteComponents/HomePage/Home';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {
+	BrowserRouter as Router,
+	Routes,
+	Route,
+	Navigate,
+	Link,
+} from 'react-router-dom';
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
+import { useEffect, useState } from 'react';
 
 import Checkout from './component/WebsiteComponents/CheckoutPage/Checkout';
 import Login from './component/WebsiteComponents/LoginPage/Login';
-import { useEffect } from 'react';
 import { authen } from './component/WebsiteComponents/LoginPage/firebase';
 import { useStateVal } from './component/WebsiteComponents/PropStore/ContextState';
 import Payment from './component/WebsiteComponents/PaymentPage/Payment';
-import { loadStripe } from '@stripe/stripe-js';
-import { Elements } from '@stripe/react-stripe-js';
+import Orders from './component/WebsiteComponents/OrderPage/Orders';
+import Header from './component/WebsiteComponents/Header/Header';
+import Home from './component/WebsiteComponents/HomePage/Home';
+
+import './App.css';
 const stripeClient = loadStripe(
 	'pk_test_51KquBTJ0wGZ0mBp51JdztrUS50BXLMqIyOIyw3RAMVgjMnzSLLe4lqgvZqt7SP2vIaZaUZufqrup5grkKksgHg2d00KNhxo7OL'
 );
 function App() {
-	const [{ userN }, dispatch] = useStateVal();
+	const [state, dispatch] = useStateVal();
+
 	useEffect(() => {
-		authen.onAuthStateChanged((authUser) => {
-			if (authUser) {
-				dispatch({
-					type: 'SET_STATE_USER',
-					userN: authUser,
-				});
-			} else {
-				dispatch({
-					type: 'SET_STATE_USER',
-					userN: null,
-				});
-			}
-		});
+		const fetchAuthen = async () => {
+			authen.onAuthStateChanged((authUser) => {
+				if (authUser) {
+					dispatch({
+						type: 'SET_STATE_USER',
+						userN: authUser,
+					});
+				} else {
+					dispatch({
+						type: 'SET_STATE_USER',
+						userN: null,
+					});
+				}
+			});
+		};
+		fetchAuthen();
 	}, []);
 	return (
 		<Router>
 			<div className="app">
+				<Routes>
+					<Route
+						path="/"
+						element={
+							<>
+								<Header />
+								<Home />
+							</>
+						}
+					/>
+				</Routes>
 				<Routes>
 					<Route
 						exact
@@ -71,13 +94,15 @@ function App() {
 						}
 					/>
 				</Routes>
+
 				<Routes>
 					<Route
-						path="/"
+						exact
+						path="/order"
 						element={
 							<>
 								<Header />
-								<Home />
+								<Orders />
 							</>
 						}
 					/>

@@ -10,6 +10,7 @@ import CartProduct from '../CheckoutPage/CartProduct';
 import { useStateVal } from '../PropStore/ContextState';
 import { calculateCart } from '../PropStore/Reducer';
 import stripeAxios from './StripeAxios';
+import { dbase } from '../LoginPage/firebase';
 //css
 import '../../css/Payment.css';
 
@@ -37,10 +38,23 @@ function Payment() {
 				},
 			})
 			.then(({ paymentIntent }) => {
+				dbase
+					.collection('users')
+					.doc(state.userN?.uid)
+					.collection('orders')
+					.doc(paymentIntent.id)
+					.set({
+						cart: state.cart,
+						amount: paymentIntent.amount,
+						created: paymentIntent.created,
+					});
 				setSuccessfulCard(true);
 				setuserError(null);
 				setProcessingCard(false);
-				navigate('/orders');
+				dispatch({
+					type: 'EMPTY_CART',
+				});
+				navigate('/');
 			});
 	}
 
@@ -54,7 +68,7 @@ function Payment() {
 		};
 		getClientScrt();
 	}, [state.cart]);
-	console.log(clientCardSecret);
+
 	return (
 		<div className="payment">
 			<div className="payment__ContainerLeft">
