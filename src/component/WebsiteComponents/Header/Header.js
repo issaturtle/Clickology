@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
@@ -14,7 +14,18 @@ import img from '../../img/withoutsticker.PNG';
  */
 function Header() {
 	const [state, dispatch] = useStateVal();
-
+	const [search_bar, set_search_bar] = useState("")
+	const test = (e) =>{
+		dispatch({
+			type: "SEARCH_QUERY",
+			value: e.target.value
+		
+		})	
+	}
+	
+	// useEffect(()=>{
+	// 	console.log(state.searchQuery)
+	// },[state.searchQuery])
 	/**
 	 * update user status using firebase
 	 */
@@ -24,12 +35,13 @@ function Header() {
 		}
 	};
 	return (
+		<>
 		<div className="header">
 			<Link to="/">
 				<img className="header__logo" src={img} alt="" />
 			</Link>
 			<div className="header__searchbar">
-				<input type="text" className="header__searchItemInput" />
+				<input type="text" className="header__searchItemInput" onInput={test}/>
 				<SearchIcon className="header__searchIcon" />
 			</div>
 			<div className="header__navBar">
@@ -67,6 +79,8 @@ function Header() {
 				</Link>
 			</div>
 		</div>
+		<div className='divider'></div>
+		</>
 	);
 }
 

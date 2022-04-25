@@ -74,7 +74,7 @@ function Payment() {
 			<div className="payment__ContainerLeft">
 				<h1>
 					Checkout (
-					<Link to="/checkout">
+					<Link to="/checkout" className="payment__CartItems">
 						{state.cart.length > 1
 							? `${state.cart.length} items`
 							: `${state.cart.length} item`}
@@ -163,7 +163,7 @@ function Payment() {
 										: `${state.cart.length} item`}
 									):{' '}
 								</td>
-								<td className="payment__Prices__Nums">$1</td>
+								<td className="payment__Prices__Nums">{calculateCart(state.cart)}</td>
 							</tr>
 							<tr>
 								<td>Shipping fees: </td>

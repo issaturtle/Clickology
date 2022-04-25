@@ -5,7 +5,7 @@
 	flex-direction: column;
 	justify-content: flex-end;
 	align-items: center;
-
+	border-radius:20px;
 	margin: 10px;
 	padding: 20px;
 	max-height: 400px;
@@ -31,18 +31,18 @@
 	flex-direction: row;
 }
 .product > button {
-	background: #f2c973;
-	border: 1px solid;
+	background: #6772a9;
+	/* border: 1px solid; */
 	border-radius: 5px;
 	height: 30px;
 	/* border-color: #a88734 #846a29; */
-	color: black;
+	color: white;
 	margin-top: 10px;
 	width: 200px;
-	box-shadow: 0px 4px 14px #f2c973;
+	box-shadow: 0px 4px 14px #a09cc0;
 }
 .product > button:hover {
-	background-color: #eec262;
+	background-color: #a09cc0;
 	transition: 0.2s background-color ease-in-out;
 }
 .zoom {
@@ -50,5 +50,5 @@
 }
 .zoom:hover {
 	transform: scale(1.02);
-	box-shadow: 0 3px 10px rgb(0 0 0 / 0.5);
+	box-shadow: 0 3px 10px #a09cc0;
 }

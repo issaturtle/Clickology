@@ -18,8 +18,7 @@
   background: none;
 }
 .cartProduct__image {
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   height: 180px;
   width: 200px;
 }
@@ -52,20 +51,6 @@
   padding-top: 0px;
 }
 
-@-webkit-keyframes myAnimation {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    visibility: hidden;
-    opacity: 0;
-    transform: rotateX(90deg);
-  }
-}
-
 @keyframes myAnimation {
   0% {
     opacity: 1;
@@ -80,14 +65,11 @@
   }
 }
 .myelement {
-  -webkit-animation-name: myAnimation;
-          animation-name: myAnimation;
-  -webkit-animation-duration: 3000ms;
-          animation-duration: 3000ms;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  animation-name: myAnimation;
+  animation-duration: 3000ms;
+  animation-fill-mode: forwards;
 }
 
 .displayNone {
   display: none;
-}/*# sourceMappingURL=CartProduct.css.map */
+}
