@@ -1,3 +1,6 @@
+import './App.css';
+import ProductDescription from './component/WebsiteComponents/ProductPage/ProductDescription';
+import Product from './component/WebsiteComponents/ProductPage/ProductDescription';
 import {
 	BrowserRouter as Router,
 	Routes,
@@ -8,6 +11,9 @@ import {
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import { useEffect, useState } from 'react';
+
+import img from './component/img/withoutsticker.PNG';
+
 
 import Checkout from './component/WebsiteComponents/CheckoutPage/Checkout';
 import Login from './component/WebsiteComponents/LoginPage/Login';
@@ -103,6 +109,24 @@ function App() {
 							<>
 								<Header />
 								<Orders />
+							</>
+						}
+					/>
+				</Routes>
+				<Routes>
+					<Route
+						path="/product/:id" component={ProductDescription} 
+						element={
+							<>
+								<Header />
+								<Product
+							id="3"
+							title="Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, nihil."
+							desc = "Sample Item Description"
+							price={6969}
+							image={img}
+							rating={5}
+						/>
 							</>
 						}
 					/>

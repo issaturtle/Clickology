@@ -100,6 +100,7 @@ function Home() {
 					<Product />
 					<Product />
 				</div> */}
+
           <div className="home__contentRow">
             <Product
               id="3"
@@ -163,6 +164,7 @@ function Home() {
       </div>
     </>
   );
+
 }
 
 export default Home;
