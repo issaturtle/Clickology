@@ -107,7 +107,7 @@ function Home() {
               title="pixels"
               price={15.99}
               image={random}
-              rating={10}
+              rating={5}
               addedToCartNotif={addToNotificationList}
               addToProductList={addToProductList}
             />
@@ -155,7 +155,7 @@ function Home() {
               title="Jinx"
               price={50.99}
               image={img}
-              rating={10}
+              rating={5}
               addedToCartNotif={addToNotificationList}
               addToProductList={addToProductList}
             />
@@ -164,7 +164,6 @@ function Home() {
       </div>
     </>
   );
-
 }
 
 export default Home;
