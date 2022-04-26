@@ -1,14 +1,18 @@
+//library imports
 import ShoppingBasket from '@mui/icons-material/ShoppingBasket';
 import React, { useEffect, useState } from 'react';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
+import { Button, Form } from 'react-bootstrap';
+import CurrencyFormat from 'react-currency-format';
+//component imports
 import CartProduct from '../CheckoutPage/CartProduct';
 import { useStateVal } from '../PropStore/ContextState';
-import '../../css/Payment.css';
 import { calculateCart } from '../PropStore/Reducer';
 import stripeAxios from './StripeAxios';
-import CurrencyFormat from 'react-currency-format';
-import { Button, Form } from 'react-bootstrap';
-import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
+import { dbase } from '../LoginPage/firebase';
+//css
+import '../../css/Payment.css';
 
 function Payment() {
 	const [state, dispatch] = useStateVal();
@@ -34,10 +38,23 @@ function Payment() {
 				},
 			})
 			.then(({ paymentIntent }) => {
+				dbase
+					.collection('users')
+					.doc(state.userN?.uid)
+					.collection('orders')
+					.doc(paymentIntent.id)
+					.set({
+						cart: state.cart,
+						amount: paymentIntent.amount,
+						created: paymentIntent.created,
+					});
 				setSuccessfulCard(true);
 				setuserError(null);
 				setProcessingCard(false);
-				navigate('/orders');
+				dispatch({
+					type: 'EMPTY_CART',
+				});
+				navigate('/');
 			});
 	}
 
@@ -51,13 +68,13 @@ function Payment() {
 		};
 		getClientScrt();
 	}, [state.cart]);
-	console.log(clientCardSecret);
+
 	return (
 		<div className="payment">
 			<div className="payment__ContainerLeft">
 				<h1>
 					Checkout (
-					<Link to="/checkout">
+					<Link to="/checkout" className="payment__CartItems">
 						{state.cart.length > 1
 							? `${state.cart.length} items`
 							: `${state.cart.length} item`}
@@ -146,7 +163,7 @@ function Payment() {
 										: `${state.cart.length} item`}
 									):{' '}
 								</td>
-								<td className="payment__Prices__Nums">$1</td>
+								<td className="payment__Prices__Nums">{calculateCart(state.cart)}</td>
 							</tr>
 							<tr>
 								<td>Shipping fees: </td>

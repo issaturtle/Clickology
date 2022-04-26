@@ -1,4 +1,5 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 .test {
-  border: 1px;
-}/*# sourceMappingURL=app.css.map */
+  border: 2px;
+  box-shadow: 100px 20px 20px black;
+}

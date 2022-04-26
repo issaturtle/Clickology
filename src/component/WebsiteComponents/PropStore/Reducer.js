@@ -3,6 +3,7 @@ export const initState = {
 	cart: [],
 	userN: null,
 	valCart: 0,
+	searchQuery:""
 };
 
 export const calculateCart = (cart) => {
@@ -44,7 +45,16 @@ const reducer = (state, action) => {
 				...state,
 				cart: newCart,
 			};
-
+		case 'EMPTY_CART':
+			return {
+				...state,
+				cart: [],
+			};
+		case 'SEARCH_QUERY':
+			return {
+				...state,
+				searchQuery: action.value,
+			}
 		default:
 			return state;
 	}

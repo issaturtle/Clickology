@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import '../../css/Login.css';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-import img from '../../img/withoutsticker.PNG';
-import { Button, Form, Tabs, Tab, Nav, NavbarBrand } from 'react-bootstrap';
+import { Button, Form, Tabs, Tab } from 'react-bootstrap';
 
 import { authen } from './firebase';
+
+import '../../css/Login.css';
+import img from '../../img/withoutsticker.PNG';
+
 function Login() {
 	const navigate = useNavigate();
 	const [email, setEmail] = useState('');

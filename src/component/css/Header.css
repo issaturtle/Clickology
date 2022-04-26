@@ -5,7 +5,7 @@
 	top: 0;
 	z-index: 100;
 	position: sticky;
-	background-color: black;
+	background-color: white;
 }
 .header__logo {
 	width: 100px;
@@ -21,18 +21,18 @@
 }
 .header__searchItemInput {
 	height: 14px;
-	border: none;
+	border: 1px solid black;
 	width: 100%;
 	padding: 10px;
 }
 .header__searchIcon {
 	padding: 5px;
 	height: 22px;
-	background-color: gold;
+	background-color: #6772a9;
 }
 .header__navOption {
 	display: flex;
-	color: white;
+	color: black;
 	flex-direction: column;
 	margin-left: 10px;
 	margin-right: 10px;
@@ -51,9 +51,14 @@
 .header__navBasket {
 	display: flex;
 	align-items: center;
-	color: white;
+	color: black;
 }
 .header__navBasketCount {
 	margin-left: 10px;
 	margin-right: 10px;
+}
+.divider {
+    border-bottom:1px solid lightgray;
+    padding:0px;
+    margin-bottom: 10px;
 }

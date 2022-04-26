@@ -1,20 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
+import { useStateVal } from '../PropStore/ContextState';
+
 import '../../css/Product.css';
 import img from '../../img/reject.gif';
 import jinx from '../../img/fullycolored.PNG';
 import longjinx from '../../img/withoutsticker.PNG';
-import { useStateVal } from '../PropStore/ContextState';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 /**
  *
  * @param {id, rating, price, title, image, addedToCartNotif }
  * @returns A product on the homepage
  */
-function Product({ id, rating, price, title, desc, image, addedToCartNotif }) {
+function Product({ id, rating, price, title, desc, image, addedToCartNotif,addToProductList }) {
 	const [state, dispatch] = useStateVal();
-
+	useEffect(()=>{
+		addToProductList(title);
+	},[])
 	function addCart() {
 		dispatch({
 			type: 'ADD_CART',

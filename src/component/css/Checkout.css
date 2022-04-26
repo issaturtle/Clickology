@@ -4,8 +4,6 @@
   padding-right: 4rem;
   display: flex;
   background-color: white;
-  height: -webkit-max-content;
-  height: -moz-max-content;
   height: max-content;
 }
 .checkOut__Ad {
@@ -19,4 +17,4 @@
 }
 .checkOut__Price {
   padding-left: 20px;
-}/*# sourceMappingURL=Checkout.css.map */
+}

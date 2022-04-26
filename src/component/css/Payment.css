@@ -16,6 +16,7 @@
   background-color: white;
 }
 .payment__ContainerLeft h1 {
+  color: #5f699c;
   padding: 10px;
   padding-left: 0px;
   border-bottom: 1px solid lightgray;
@@ -23,6 +24,7 @@
 .payment__ContainerLeft__Details {
   padding-top: 25px;
   padding-bottom: 2px;
+  color: #6772a9;
 }
 .payment__ContainerLeft .form {
   padding-bottom: 10px;
@@ -32,6 +34,9 @@
   border: 0px;
   border-bottom: 1px solid black;
   border-radius: 0px;
+}
+.payment__ContainerLeft .payment__CartItems {
+  color: #6772a9;
 }
 .payment__System {
   padding-top: 10px;
@@ -47,12 +52,14 @@
 }
 .payment__ContainerRight h1 {
   padding: 10px;
+  color: #5f699c;
   padding-left: 0px;
 }
 .payment__Title {
   display: flex;
   flex-direction: column;
   justify-content: left;
+  color: #5f699c;
 }
 .payment__Title p {
   padding-bottom: 5px;
@@ -70,8 +77,6 @@
 }
 .payment__block__details {
   padding-right: 50px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   display: flex;
 }
@@ -94,21 +99,27 @@
   border-bottom: 1px solid lightgray;
 }
 .payment__Prices__Total {
-  color: lightcoral;
+  color: rgb(168, 28, 28);
 }
 .payment__Cartitems {
   min-width: calc(100% - 4rem);
   max-width: 400px;
 }
 .payment__Orderbtn {
-  background-color: rgb(104, 194, 224);
+  background-color: #5f699c;
   width: 100%;
-  color: #f2c973;
+  color: white;
   border-radius: 5px;
   height: 30px;
   margin-top: 10px;
+  box-shadow: 0px 4px 14px #a09cc0;
+  border: white;
+}
+.payment__Orderbtn:hover {
+  background-color: #a09cc0;
+  transition: 0.2s background-color ease-in-out;
 }
 
 .separator {
   border-bottom: 1px solid lightgray;
-}/*# sourceMappingURL=Payment.css.map */
+}

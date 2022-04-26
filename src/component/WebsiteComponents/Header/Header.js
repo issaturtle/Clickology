@@ -1,18 +1,31 @@
-import React from 'react';
-import '../../css/Header.css';
-import img from '../../img/withoutsticker.PNG';
+import React, {useEffect, useState} from 'react';
+import { Link } from 'react-router-dom';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
-import { Link } from 'react-router-dom';
+
 import { useStateVal } from '../PropStore/ContextState';
 import { authen } from '../LoginPage/firebase';
+
+import '../../css/Header.css';
+import img from '../../img/withoutsticker.PNG';
 /**
  *
  * @returns The navBar of the website
  */
 function Header() {
 	const [state, dispatch] = useStateVal();
-
+	const [search_bar, set_search_bar] = useState("")
+	const test = (e) =>{
+		dispatch({
+			type: "SEARCH_QUERY",
+			value: e.target.value
+		
+		})	
+	}
+	
+	// useEffect(()=>{
+	// 	console.log(state.searchQuery)
+	// },[state.searchQuery])
 	/**
 	 * update user status using firebase
 	 */
@@ -22,12 +35,13 @@ function Header() {
 		}
 	};
 	return (
+		<>
 		<div className="header">
 			<Link to="/">
 				<img className="header__logo" src={img} alt="" />
 			</Link>
 			<div className="header__searchbar">
-				<input type="text" className="header__searchItemInput" />
+				<input type="text" className="header__searchItemInput" onInput={test}/>
 				<SearchIcon className="header__searchIcon" />
 			</div>
 			<div className="header__navBar">
@@ -41,18 +55,20 @@ function Header() {
 						</span>
 					</div>
 				</Link>
-				<div className="header__navOption">
+				<Link to="/order">
 					<div className="header__navOption">
-						<span className="header__navOptionOne">Return</span>
-						<span className="header__navOptionTwo">sign in</span>
+						<div className="header__navOption">
+							<span className="header__navOptionOne">Order</span>
+							<span className="header__navOptionTwo">History </span>
+						</div>
 					</div>
-				</div>
-				<div className="header__navOption">
+				</Link>
+				{/* <div className="header__navOption">
 					<div className="header__navOption">
 						<span className="header__navOptionOne">Your</span>
 						<span className="header__navOptionTwo">Prime</span>
 					</div>
-				</div>
+				</div> */}
 				<Link to="/checkout">
 					<div className="header__navBasket">
 						<ShoppingBasketIcon />
@@ -63,6 +79,8 @@ function Header() {
 				</Link>
 			</div>
 		</div>
+		<div className='divider'></div>
+		</>
 	);
 }
 

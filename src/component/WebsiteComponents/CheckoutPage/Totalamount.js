@@ -1,11 +1,13 @@
 import React from 'react';
-import '../../css/Totalamount.css';
+import { useNavigate } from 'react-router-dom';
 import CurrencyFormat from 'react-currency-format';
-import { useStateVal } from '../PropStore/ContextState';
 import { useState, useEffect } from 'react';
 import { render } from 'react-dom';
+
+import { useStateVal } from '../PropStore/ContextState';
 import { calculateCart } from '../PropStore/Reducer';
-import { useNavigate } from 'react-router-dom';
+
+import '../../css/Totalamount.css';
 /**
  * totalAmount component that returns the total amount and the payment button
  * @returns the total amount in the checkout page
