@@ -71,7 +71,7 @@ function Home() {
 				</div> */}
 					<div className="home__contentRow">
 						<Product
-							id="2"
+							id="3"
 							title="Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, nihil."
 							price={6969}
 							image={img}
@@ -80,7 +80,7 @@ function Home() {
 						/>
 
 						<Product
-							id="3"
+							id="4"
 							title="onsectetur adipisicing elit. Impedit, nihil."
 							price={6933}
 							image={sjinx}
@@ -88,7 +88,7 @@ function Home() {
 							addedToCartNotif={addToNotificationList}
 						/>
 						<Product
-							id="4"
+							id="5"
 							title="onsectetur Impedit, nihil."
 							price={3}
 							image={img}
@@ -96,7 +96,7 @@ function Home() {
 							addedToCartNotif={addToNotificationList}
 						/>
 						<Product
-							id="2"
+							id="6"
 							rating={5}
 							price={11.69}
 							title="temp1"
@@ -104,7 +104,7 @@ function Home() {
 							addedToCartNotif={addToNotificationList}
 						/>
 						<Product
-							id="2"
+							id="7"
 							rating={5}
 							price={11.69}
 							title="temp1"
@@ -114,7 +114,7 @@ function Home() {
 					</div>
 					<div className="home__contentRow">
 						<Product
-							id="5"
+							id="8"
 							title="Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, nihil."
 							price={6969}
 							image={img}

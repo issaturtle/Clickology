@@ -1,18 +1,17 @@
 import React from 'react';
-import '../../css/Product.css';
+import '../../css/ProductDescription.css';
 import img from '../../img/reject.gif';
 import jinx from '../../img/fullycolored.PNG';
 import longjinx from '../../img/withoutsticker.PNG';
 import { useStateVal } from '../PropStore/ContextState';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-
 /**
  *
  * @param {id, rating, price, title, image, addedToCartNotif }
  * @returns A product on the homepage
  */
-function Product({ id, rating, price, title, desc, image, addedToCartNotif }) {
+function ProductDescription({ id, rating, price, title, desc, image, addedToCartNotif }) {
+	
 	const [state, dispatch] = useStateVal();
 
 	function addCart() {
@@ -31,18 +30,15 @@ function Product({ id, rating, price, title, desc, image, addedToCartNotif }) {
 	}
 	return (			
 		<div className="product zoom">
-			<Link to= {{pathname: "/product/" + id, 
-						state: state}}>	
-				<img src={image} alt="" width = "200" height="200" />
-			</Link>
+			<img src={image} alt="" width = "200" height="200" />
 			<div className="product__information">
-				<Link to="">	
-					<p>{title}</p>
-					<p className="product__price">
-						<small>$</small>
-						<strong>{price}</strong>
-					</p>
-				</Link>
+                <p>{title}</p>
+                <p className="product__price">
+                    <small>$</small>
+                    <strong>{price}
+                    {desc}
+                    </strong>
+                </p>
 				<div className="product__handRating">
 					{Array(rating)
 						.fill()
@@ -57,7 +53,8 @@ function Product({ id, rating, price, title, desc, image, addedToCartNotif }) {
 				<h4>Add to Cart</h4>
 			</button>
 		</div>
+		
 	);
 }
 
-export default Product;
+export default ProductDescription;
