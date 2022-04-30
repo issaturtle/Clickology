@@ -5,16 +5,16 @@ export const initState = {
   userN: null,
   valCart: 0,
   searchQuery: "",
-  basket: [],
+  productList: [],
 };
 
-export const calculateCart = (cart) => {
-  let val = 0;
-  cart.forEach((item) => {
-    val += item.price;
-  });
-  return val;
-};
+// export const calculateCart = (cart) => {
+//   let val = 0;
+//   cart.forEach((item) => {
+//     val += item.price;
+//   });
+//   return val;
+// };
 export const calculate_cart = (cart) => {
   let val = 0;
   cart.forEach((item) => {
@@ -24,7 +24,7 @@ export const calculate_cart = (cart) => {
       val += item.price;
     }
   });
-  return val;
+  return parseFloat(val.toFixed(2));
 };
 export const calculate_cart_length = (cart) => {
   let val = 0;

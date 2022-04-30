@@ -85,6 +85,7 @@ function Home() {
               image={rej}
               addedToCartNotif={addToNotificationList}
               addToProductList={addToProductList}
+              desc="temp"
             />
             <Product
               id="2"
@@ -94,6 +95,7 @@ function Home() {
               image={dog}
               addedToCartNotif={addToNotificationList}
               addToProductList={addToProductList}
+              desc="temp"
             />
           </div>
           {/* <div className="home__contentRow">
@@ -110,6 +112,7 @@ function Home() {
               rating={5}
               addedToCartNotif={addToNotificationList}
               addToProductList={addToProductList}
+              desc="temp"
             />
 
             <Product
@@ -120,6 +123,7 @@ function Home() {
               rating={1}
               addedToCartNotif={addToNotificationList}
               addToProductList={addToProductList}
+              desc="temp"
             />
             <Product
               id="5"
@@ -129,6 +133,7 @@ function Home() {
               rating={1}
               addedToCartNotif={addToNotificationList}
               addToProductList={addToProductList}
+              desc="temp"
             />
             <Product
               id="6"
@@ -138,6 +143,7 @@ function Home() {
               image={mutant}
               addedToCartNotif={addToNotificationList}
               addToProductList={addToProductList}
+              desc="temp"
             />
             <Product
               id="7"
@@ -147,6 +153,7 @@ function Home() {
               image={ape}
               addedToCartNotif={addToNotificationList}
               addToProductList={addToProductList}
+              desc="temp"
             />
           </div>
           <div className="home__contentRow">
@@ -158,6 +165,7 @@ function Home() {
               rating={5}
               addedToCartNotif={addToNotificationList}
               addToProductList={addToProductList}
+              desc="temp"
             />
           </div>
         </div>

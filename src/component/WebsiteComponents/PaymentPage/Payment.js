@@ -34,6 +34,11 @@ function Payment() {
     setdisableCardInput(e.empty);
     setuserError(e.error ? e.error.message : "");
   };
+  function toFixed(number, decimals) {
+    var x = Math.pow(10, Number(decimals) + 1);
+    return (Number(number) + 1 / x).toFixed(decimals);
+  }
+
   async function handleCardSubmit(e) {
     e.preventDefault();
     setProcessingCard(true);
@@ -68,7 +73,9 @@ function Payment() {
     const getClientScrt = async () => {
       const res = await stripeAxios({
         method: "post",
-        url: `/payment/create?total=${(calculate_cart(state.cart) + 5) * 100}`,
+        url: `/payment/create?total=${
+          parseFloat(calculate_cart(state.cart) + 3).toPrecision(2) * 100
+        }`,
       });
       setclientCardSecret(res.data.clientSecret);
     };
@@ -183,7 +190,7 @@ function Payment() {
                     <h7>ground shipping</h7>
                   </td>{" "}
                 </td>
-                <td className="payment__Prices__Nums">$5</td>
+                <td className="payment__Prices__Nums">$3</td>
               </tr>
               <tr>
                 <td>Tax:</td>
@@ -194,7 +201,21 @@ function Payment() {
                   <h2 className="payment__Prices__Total">Order Total:</h2>
                 </td>
                 <td>
-                  <h2 className="payment__Prices__Total">{cartTotal + 5}</h2>
+                  <h2 className="payment__Prices__Total">
+                    <CurrencyFormat
+                      renderText={(value) => (
+                        <p>
+                         
+                          <strong>{value}</strong>
+                        </p>
+                      )}
+                      decimalScale={2}
+                      value={calculate_cart(state.cart)+3}
+                      displayType={"text"}
+                      thousandSeparator={true}
+                      prefix={"$"}
+                    />
+                  </h2>
                 </td>
               </tr>
               <tr></tr>
