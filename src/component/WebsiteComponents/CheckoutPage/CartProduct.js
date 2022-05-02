@@ -1,6 +1,7 @@
 //library
 import React from "react";
 import { useStateVal } from "../PropStore/ContextState";
+import { Link } from "react-router-dom";
 //css
 import "../../css/CartProduct.css";
 import { find_product_index_cart } from "../PropStore/Reducer";
@@ -32,7 +33,10 @@ function CartProduct({
   return (
     <>
       <div className="cartProduct">
-        <img className="cartProduct__image" src={image} alt="" />
+        <Link to={{ pathname: "/product/" + id, state: state }}>
+          <img className="cartProduct__image" src={image} alt="" />
+        </Link>
+
         <div className="cartProduct__info">
           <div className="test">
             <p className="cartProduct__title">{title}</p>

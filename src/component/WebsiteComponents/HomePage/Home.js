@@ -98,10 +98,6 @@ function Home() {
               desc="temp"
             />
           </div>
-          {/* <div className="home__contentRow">
-					<Product />
-					<Product />
-				</div> */}
 
           <div className="home__contentRow">
             <Product

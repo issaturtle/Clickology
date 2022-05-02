@@ -3,9 +3,7 @@ import React, { useEffect } from "react";
 import { useStateVal } from "../PropStore/ContextState";
 
 import "../../css/Product.css";
-import img from "../../img/reject.gif";
-import jinx from "../../img/fullycolored.PNG";
-import longjinx from "../../img/withoutsticker.PNG";
+
 import { Link } from "react-router-dom";
 
 /**
@@ -102,20 +100,18 @@ function Product({
           <img src={image} alt="" height="200" />
         </Link>
         <div className="product__information">
-          <Link to="">
-            <p>{title}</p>
-            <p className="product__price">
-              <small>$</small>
-              <strong>{price}</strong>
-            </p>
-          </Link>
+          <strong>{title}</strong>
+          <p className="product__price">
+            <small>$</small>
+            <strong>{price}</strong>
+          </p>
+
           <div className="product__handRating">
             {Array(rating)
               .fill()
               .map((_, i) => (
                 <p>👏</p>
               ))}
-            {id}
           </div>
         </div>
       </div>

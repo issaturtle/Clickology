@@ -5,7 +5,12 @@ const { response } = require("express");
 const stripe = require("stripe")(
   "sk_test_51KquBTJ0wGZ0mBp5f8mdwiG1eb18HyfYKwbKMHAmLmvPeySTY6Ia8u1BuXmlbLdWOOFxKzN78cu18zMZBdzFbBw200YttCy7fJ"
 );
-
+const productList = [
+  {
+    id: 0,
+    image: "/../../img/anya.png",
+  },
+];
 const app = express();
 app.use(cors({ origin: true }));
 app.use(express.json());
@@ -21,6 +26,11 @@ app.post("/payment/create", async (req, res) => {
   res.status(201).send({
     clientSecret: paymentInt.client_secret,
   });
+});
+
+app.post("/product", async (req, res) => {
+  console.log(req.query.id);
+  res.status(201).send(productList[req.query.id]);
 });
 const YOUR_DOMAIN = "http://localhost:3000";
 
