@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 import { useStateVal } from "../PropStore/ContextState";
-
+import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import "../../css/Product.css";
 
 import { Link } from "react-router-dom";
@@ -117,7 +117,10 @@ function Product({
       </div>
 
       <button onClick={addCart}>
-        <h4>Add to Cart</h4>
+        <div style={{ paddingRight: 3 }}>
+          <ShoppingBasketIcon />
+        </div>
+        Add to Cart
       </button>
     </div>
   );

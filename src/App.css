@@ -7,3 +7,9 @@
   margin: 0px;
   padding: 0px;
 }
+.displayNone {
+  display: none;
+}
+.displayBlock {
+  display: block;
+}

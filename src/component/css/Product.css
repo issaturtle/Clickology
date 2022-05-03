@@ -44,6 +44,9 @@
   width: 200px;
   box-shadow: 0px 4px 14px #a09cc0;
   border: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .product > button:hover {
   background-color: #a09cc0;

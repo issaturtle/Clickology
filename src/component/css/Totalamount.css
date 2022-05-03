@@ -13,16 +13,16 @@
 }
 .totalAmount button {
   background: #6772a9;
-  border: 1px solid;
+  border: none;
   border-radius: 5px;
   height: 30px;
   /* border-color: #a88734 #846a29; */
-  color: black;
+  color: white;
   margin-top: 10px;
-  box-shadow: 0px 4px 14px #f2c973;
+  box-shadow: 0px 4px 14px #a09cc0;
 }
 .totalAmount button:hover {
-  background-color: #eec262;
+  background-color: #a09cc0;
   transition: 0.2s background-color ease-in-out;
 }
 .totalAmount button.disabled {
