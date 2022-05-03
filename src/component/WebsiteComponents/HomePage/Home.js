@@ -33,9 +33,9 @@ function Home() {
       return [...oldArray, name];
     });
   };
-  useEffect(() => {
-    console.log(state.cart);
-  }, [state.cart]);
+  // useEffect(() => {
+  //   console.log(state.cart);
+  // }, [state.cart]);
   //not done
   // useEffect(()=>{
   // 	let elem = document.querySelectorAll('.home__contentRow')

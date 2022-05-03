@@ -74,23 +74,29 @@ function Product({
   addedToCartNotif,
   addToProductList,
 }) {
+  let timer;
   const [state, dispatch] = useStateVal();
   useEffect(() => {
+    return () => clearTimeout(timer);
     addToProductList(title);
   }, []);
+
   function addCart() {
-    dispatch({
-      type: "ADD_CART",
-      item: {
-        id: id,
-        title: title,
-        desc: desc,
-        image: image,
-        price: price,
-        rating: rating,
-        amount: 1,
-      },
-    });
+    timer = setTimeout(() => {
+      dispatch({
+        type: "ADD_CART",
+        item: {
+          id: id,
+          title: title,
+          desc: desc,
+          image: image,
+          price: price,
+          rating: rating,
+          amount: 1,
+        },
+      });
+    }, 1000);
+
     addedToCartNotif(title);
   }
   return (

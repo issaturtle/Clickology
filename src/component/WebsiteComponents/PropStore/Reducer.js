@@ -173,12 +173,12 @@ const reducer = (state, action) => {
       };
     case "ADD_CART":
       let newBasket = [...state.cart];
-      const ind = state.cart.findIndex(
+      const ind = newBasket.findIndex(
         (cartItem) => cartItem.id === action.item.id
       );
 
       if (ind === -1) {
-        newBasket = [...state.cart, action.item];
+        newBasket = [...newBasket, action.item];
       } else {
         newBasket[ind].amount += 1;
       }
@@ -186,11 +186,24 @@ const reducer = (state, action) => {
         ...state,
         cart: newBasket,
       };
-      return {
-        //keep original state, add item into basket
-        ...state,
-        cart: [...state.cart, action.item],
-      };
+
+    // return {
+    //   ...state,
+    //   cart: [...newBasket],
+    // };
+    // return state.cart.map((item, index) => {
+    //   if (item.id === action.item.id) {
+    //     newCart[index].amount += 1;
+    //     return {
+    //       ...state,
+    //       cart: [...newCart],
+    //     };
+    //   }
+    //   return {
+    //     ...state,
+    //     cart: [...state.cart, action.item],
+    //   };
+    // });
 
     case "REMOVE_CART":
       const index = state.cart.findIndex(
