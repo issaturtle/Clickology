@@ -36,6 +36,7 @@ function Checkout() {
           ))}
         </div>
       </div>
+      <div className="dividercheck"></div>
     </div>
   );
 }

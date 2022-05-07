@@ -31,3 +31,15 @@
   z-index: 3;
   padding-top: 10px;
 }
+
+@media screen and (max-width: 39em) {
+  .home__contentRow {
+    display: block;
+    z-index: 1;
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+  .footer {
+    display: none;
+  }
+}

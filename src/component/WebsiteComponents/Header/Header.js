@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
-
+import HomeIcon from "@mui/icons-material/Home";
+import HistoryIcon from "@mui/icons-material/History";
+import LoginIcon from "@mui/icons-material/Login";
 import { useStateVal } from "../PropStore/ContextState";
 import { authen } from "../LoginPage/firebase";
 
@@ -46,17 +48,17 @@ function Header() {
             <SearchIcon className="header__searchIcon" />
           </Link>
         </div>
+        <Link to="/login">
+          <div className="header__navOption" onClick={callAuthen}>
+            <span className="header__navOptionOne test">
+              Hello {state.userN === null ? "Guest" : state.userN.email}
+            </span>
+            <span className="header__navOptionTwo">
+              {state.userN === null ? "Sign in" : "Sign out"}
+            </span>
+          </div>
+        </Link>
         <div className="header__navBar">
-          <Link to="/login">
-            <div className="header__navOption" onClick={callAuthen}>
-              <span className="header__navOptionOne">
-                Hello {state.userN === null ? "Guest" : state.userN.email}
-              </span>
-              <span className="header__navOptionTwo">
-                {state.userN === null ? "Sign in" : "Sign out"}
-              </span>
-            </div>
-          </Link>
           <Link to="/order">
             <div className="header__navOption">
               <div className="header__navOption">
@@ -80,6 +82,13 @@ function Header() {
             </div>
           </Link>
         </div>
+      </div>
+      <div class="header__menu">
+        <a href="order">Order History</a>
+        <a href="login">Login</a>
+        <Link to="/checkout">
+          <a href="">Cart</a>
+        </Link>
       </div>
     </>
   );

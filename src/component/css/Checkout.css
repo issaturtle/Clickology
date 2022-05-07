@@ -6,16 +6,28 @@
   background-color: white;
   height: max-content;
 }
+@media (max-width: 39em) {
+  .checkOut {
+    display: block;
+  }
+}
 .checkOut__Ad {
   width: 100%;
   margin-bottom: 10px;
   border-radius: 20px;
 }
+@media (max-width: 39em) {
+  .checkOut__Ad {
+    display: none;
+  }
+}
 .checkOut__title {
   margin-right: 10px;
   padding: 10px;
-  border-bottom: 3px solid black;
 }
 .checkOut__Price {
   padding-left: 20px;
+}
+.checkOut .dividercheck {
+  border: 1px solid black;
 }
