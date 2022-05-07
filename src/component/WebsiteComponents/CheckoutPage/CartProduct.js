@@ -1,5 +1,5 @@
 //library
-import React from "react";
+import React, { useEffect } from "react";
 import { useStateVal } from "../PropStore/ContextState";
 import { Link } from "react-router-dom";
 //css
@@ -19,10 +19,36 @@ function CartProduct({
   hideRemove = false,
   amountHistory = false,
   amount = -1,
+  productList = false,
 }) {
   //"store" for props
+  let pQuantity;
   const [state, dispatch] = useStateVal();
-
+  const createQuantity = () => {
+    if (productList === true) {
+      pQuantity = "";
+    } else if (amountHistory === true) {
+      pQuantity = (
+        <p>
+          Quantity:<strong>{amount}</strong>{" "}
+        </p>
+      );
+    } else {
+      pQuantity = (
+        <p>
+          <p>
+            Quantity:{" "}
+            <strong>
+              {state.cart[find_product_index_cart(state.cart, id)].amount}
+            </strong>
+          </p>
+        </p>
+      );
+    }
+  };
+  useEffect(() => {
+    createQuantity();
+  }, []);
   //send request to "store" to remove item from cart
   const removeCart = () => {
     dispatch({
@@ -55,7 +81,7 @@ function CartProduct({
               <strong>{price}</strong>
             </p>
 
-            {amountHistory === true ? (
+            {/* {amountHistory === true ? (
               <p>
                 Quantity:<strong>{amount}</strong>{" "}
               </p>
@@ -66,8 +92,8 @@ function CartProduct({
                   {state.cart[find_product_index_cart(state.cart, id)].amount}
                 </strong>
               </p>
-            )}
-
+            )} */}
+            {pQuantity}
             {hideRemove === true ? (
               ""
             ) : (

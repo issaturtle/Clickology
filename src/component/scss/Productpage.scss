@@ -163,7 +163,7 @@
     // margin: 10px auto;
   }
 }
-.divider {
+.divider__productPage {
   width: 100%;
   border-bottom: 1px solid lightgray;
 }
@@ -207,7 +207,7 @@
   cursor: pointer;
   .content {
     display: flex;
-    justify-content: center;
+    // justify-content: center;
     align-items: center;
     flex-direction: column;
     z-index: 30;
@@ -225,5 +225,11 @@
     border-radius: 30px;
     padding-inline: 20px;
     text-align: center;
+    h1 {
+      padding: 10px;
+    }
+    p {
+      padding: 10px;
+    }
   }
 }

@@ -19,19 +19,22 @@ function HungProductPage() {
     title: "",
     reviews: [],
   });
+  let timer;
   const addTocart = () => {
-    dispatch({
-      type: "ADD_CART",
-      item: {
-        id: productValues.id,
-        title: productValues.title,
-        desc: productValues.desc,
-        image: productValues.image,
-        price: productValues.price,
-        rating: productValues.rating,
-        amount: 1,
-      },
-    });
+    timer = setTimeout(() => {
+      dispatch({
+        type: "ADD_CART",
+        item: {
+          id: productValues.id,
+          title: productValues.title,
+          desc: productValues.desc,
+          image: productValues.image,
+          price: productValues.price,
+          rating: productValues.rating,
+          amount: 1,
+        },
+      });
+    }, 1000);
   };
   const turnOverlay = () => {
     if (overlayStatus === false) {
@@ -42,19 +45,8 @@ function HungProductPage() {
       document.getElementById("overlay").style.display = "none";
     }
   };
-  const displayHelp = () => {};
+
   useEffect(() => {
-    // const getProduct = async () => {
-    //   const res = await stripeAxios({
-    //     method: "post",
-    //     url: `/product/?id=${param.id}`,
-    //   }).then((resp) => {
-    //     setImage(("../../img", true));
-    //     setProductValues({
-    //       id: resp.data.id,
-    //       image: resp.data.image,
-    //     });
-    //   });
     const getProduct = async () => {
       setProductValues({
         id: state.productList[param.id].id,
@@ -68,13 +60,18 @@ function HungProductPage() {
     };
 
     getProduct();
+    return () => clearTimeout(timer);
   }, []);
   return (
     <>
       <div id="overlay" onClick={turnOverlay}>
         <div className="content">
           <h1>Return policy</h1>
-          <p>you dont but please contact 1234@gmail.com for more information</p>
+          <p>
+            you dont but please contact{" "}
+            <a href="mailto:1234@gmail.com">1234@gmail.com</a> for more
+            information
+          </p>
         </div>
       </div>
 
@@ -127,7 +124,7 @@ function HungProductPage() {
                     <li>Available only for a limited time </li>
                     <li>Will be shipped within 1 business day </li>
                   </ul>
-                  <div className="divider"></div>
+                  <div className="divider__productPage"></div>
                   <p>Product Id: {productValues.id}</p>
                 </div>
               </div>
@@ -160,7 +157,7 @@ function HungProductPage() {
         </div>
         <div className="productpage__review">
           <h1>REVIEWS</h1>
-          <div className="divider"></div>
+          <div className="divider__productPage"></div>
           {productValues.reviews.length > 0 ? (
             productValues.reviews.map((item) => (
               <>

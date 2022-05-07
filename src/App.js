@@ -23,7 +23,9 @@ import Orders from "./component/WebsiteComponents/OrderPage/Orders";
 import Header from "./component/WebsiteComponents/Header/Header";
 import Home from "./component/WebsiteComponents/HomePage/Home";
 import HungProductPage from "./component/WebsiteComponents/ProductPage/HungProductPage";
+import Footer from "./component/WebsiteComponents/Footer/Footer";
 import "./App.css";
+import SearchPage from "./component/WebsiteComponents/SearchPage/SearchPage";
 const stripeClient = loadStripe(
   "pk_test_51KquBTJ0wGZ0mBp51JdztrUS50BXLMqIyOIyw3RAMVgjMnzSLLe4lqgvZqt7SP2vIaZaUZufqrup5grkKksgHg2d00KNhxo7OL"
 );
@@ -58,6 +60,7 @@ function App() {
               <>
                 <Header />
                 <Home />
+                <Footer />
               </>
             }
           />
@@ -70,6 +73,7 @@ function App() {
               <>
                 <Header />
                 <Checkout />
+                <Footer />
               </>
             }
           />
@@ -108,6 +112,7 @@ function App() {
               <>
                 <Header />
                 <Orders />
+                <Footer />
               </>
             }
           />
@@ -120,6 +125,20 @@ function App() {
               <>
                 <Header />
                 <HungProductPage />
+                <Footer />
+              </>
+            }
+          />
+        </Routes>
+        <Routes>
+          <Route
+            path="/searchPage/:query"
+            // component={ProductDescription}
+            element={
+              <>
+                <Header />
+                <SearchPage />
+                <Footer />
               </>
             }
           />

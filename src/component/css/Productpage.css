@@ -143,7 +143,7 @@
   align-items: left;
 }
 
-.divider {
+.divider__productPage {
   width: 100%;
   border-bottom: 1px solid lightgray;
 }
@@ -192,7 +192,6 @@
 }
 #overlay .content {
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
   z-index: 30;
@@ -210,4 +209,10 @@
   border-radius: 30px;
   padding-inline: 20px;
   text-align: center;
+}
+#overlay .content h1 {
+  padding: 10px;
+}
+#overlay .content p {
+  padding: 10px;
 }

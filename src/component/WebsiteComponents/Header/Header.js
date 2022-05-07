@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 
@@ -16,16 +16,10 @@ import { calculate_cart_length } from "../PropStore/Reducer";
 function Header() {
   const [state, dispatch] = useStateVal();
   const [search_bar, set_search_bar] = useState("");
-  const test = (e) => {
-    dispatch({
-      type: "SEARCH_QUERY",
-      value: e.target.value,
-    });
-  };
 
-  // useEffect(()=>{
-  // 	console.log(state.searchQuery)
-  // },[state.searchQuery])
+  useEffect(() => {
+    console.log(search_bar);
+  }, [search_bar]);
   /**
    * update user status using firebase
    */
@@ -44,9 +38,13 @@ function Header() {
           <input
             type="text"
             className="header__searchItemInput"
-            onInput={test}
+            onChange={(e) => {
+              set_search_bar(e.target.value);
+            }}
           />
-          <SearchIcon className="header__searchIcon" />
+          <Link to={{ pathname: "/searchPage/" + search_bar, state: state }}>
+            <SearchIcon className="header__searchIcon" />
+          </Link>
         </div>
         <div className="header__navBar">
           <Link to="/login">
@@ -83,7 +81,6 @@ function Header() {
           </Link>
         </div>
       </div>
-      <div className="divider"></div>
     </>
   );
 }
