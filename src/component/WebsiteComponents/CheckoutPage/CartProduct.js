@@ -1,5 +1,5 @@
 //library
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useStateVal } from "../PropStore/ContextState";
 import { Link } from "react-router-dom";
 //css
@@ -22,26 +22,24 @@ function CartProduct({
   productList = false,
 }) {
   //"store" for props
-  let pQuantity;
+  const [pQuantity, setQuantity] = useState("");
   const [state, dispatch] = useStateVal();
   const createQuantity = () => {
     if (productList === true) {
-      pQuantity = "";
+      setQuantity("");
     } else if (amountHistory === true) {
-      pQuantity = (
+      setQuantity(
         <p>
           Quantity:<strong>{amount}</strong>{" "}
         </p>
       );
     } else {
-      pQuantity = (
+      setQuantity(
         <p>
-          <p>
-            Quantity:{" "}
-            <strong>
-              {state.cart[find_product_index_cart(state.cart, id)].amount}
-            </strong>
-          </p>
+          Quantity:{" "}
+          <strong>
+            {state.cart[find_product_index_cart(state.cart, id)].amount}
+          </strong>
         </p>
       );
     }

@@ -154,7 +154,6 @@
 
 .zoompp:hover {
   transform: scale(1.1);
-  box-shadow: 0 3px 10px #a09cc0;
 }
 
 .mid {
