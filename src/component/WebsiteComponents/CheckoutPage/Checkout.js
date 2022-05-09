@@ -25,6 +25,7 @@ function Checkout() {
           <h2 className="checkOut__title">
             Your Cart ({calculate_cart_length(state.cart)} items){" "}
           </h2>
+          <div className="dividercheck"></div>
           {state.cart.map((item) => (
             <CartProduct
               id={item.id}
@@ -36,7 +37,6 @@ function Checkout() {
           ))}
         </div>
       </div>
-      <div className="dividercheck"></div>
     </div>
   );
 }

@@ -10,7 +10,18 @@
   top: 40px;
   right: 20px;
 }
+@media (max-width: 39em) {
+  .order__id {
+    position: unset;
+  }
+}
 .order__total {
   font-weight: 500;
   text-align: right;
+}
+
+@media screen and (max-width: 39em) {
+  .cartProduct {
+    display: block;
+  }
 }

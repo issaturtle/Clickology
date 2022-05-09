@@ -27,6 +27,11 @@ function Payment() {
   const [successfulCard, setSuccessfulCard] = useState(null);
   const [processingCard, setProcessingCard] = useState("");
   const [clientCardSecret, setclientCardSecret] = useState(true);
+  const [fullName, set_full_name] = useState("");
+  const [address, set_address] = useState("");
+  const [city, set_city] = useState("");
+  const [user_state, set_user_state] = useState("");
+  const [zipcode, set_zipcode] = useState("");
   const stripeElements = useElements();
   const stripeClient = useStripe();
   const navigate = useNavigate();
@@ -58,6 +63,13 @@ function Payment() {
             cart: state.cart,
             amount: paymentIntent.amount,
             created: paymentIntent.created,
+            buyer_info: {
+              fullName: fullName,
+              address: address,
+              city: city,
+              state: user_state,
+              zipcode: zipcode,
+            },
           });
         setSuccessfulCard(true);
         setuserError(null);
@@ -107,6 +119,9 @@ function Payment() {
                   type="text"
                   placeholder="Full name"
                   className="inputform payment__Form__Input "
+                  onChange={(e) => {
+                    set_full_name(e.target.value);
+                  }}
                 />
               </Form.Group>
               <Form.Group className="form">
@@ -115,6 +130,9 @@ function Payment() {
                   type="text"
                   placeholder="Address (or PO Box)"
                   className="inputform payment__Form__Input "
+                  onChange={(e) => {
+                    set_address(e.target.value);
+                  }}
                 />
               </Form.Group>
               <Form.Group className="form">
@@ -123,6 +141,9 @@ function Payment() {
                   type="text"
                   placeholder="City"
                   className="inputform payment__Form__Input "
+                  onChange={(e) => {
+                    set_city(e.target.value);
+                  }}
                 />
               </Form.Group>
               <Form.Group className="form">
@@ -131,6 +152,9 @@ function Payment() {
                   type="text"
                   placeholder="State"
                   className="inputform payment__Form__Input "
+                  onChange={(e) => {
+                    set_user_state(e.target.value);
+                  }}
                 />
               </Form.Group>
               <Form.Group className="form">
@@ -139,14 +163,17 @@ function Payment() {
                   type="text"
                   placeholder="Zip code"
                   className="inputform payment__Form__Input "
+                  onChange={(e) => {
+                    set_zipcode(e.target.value);
+                  }}
                 />
               </Form.Group>
             </Form>
-            <form id="payment-form">
+            {/* <form id="payment-form">
               <div id="payment-element"></div>
               <button id="submit">Subscribe</button>
               <div id="error-message"></div>
-            </form>
+            </form> */}
           </div>
         </div>
         <div className="separator"></div>
@@ -159,6 +186,7 @@ function Payment() {
               <CardElement onChange={handleCardChange} />
               <button
                 disabled={processingCard || disableCardInput || successfulCard}
+                className="payment__Orderbtn"
               >
                 <span>{processingCard ? <p>Processing</p> : "Buy Now"}</span>
               </button>
@@ -205,12 +233,11 @@ function Payment() {
                     <CurrencyFormat
                       renderText={(value) => (
                         <p>
-                         
                           <strong>{value}</strong>
                         </p>
                       )}
                       decimalScale={2}
-                      value={calculate_cart(state.cart)+3}
+                      value={calculate_cart(state.cart) + 3}
                       displayType={"text"}
                       thousandSeparator={true}
                       prefix={"$"}
@@ -222,7 +249,13 @@ function Payment() {
             </table>
           </div>
           <div className="separator"></div>
-          <button className="payment__Orderbtn">Place order here</button>
+          <button
+            disabled={processingCard || disableCardInput || successfulCard}
+            className="payment__Orderbtn"
+          >
+            <span>{processingCard ? <p>Processing</p> : "Buy Now"}</span>
+          </button>
+
           <div className="payment__Title">
             <h1>Your Cart</h1>
           </div>

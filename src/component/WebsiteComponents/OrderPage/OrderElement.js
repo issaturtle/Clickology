@@ -11,9 +11,33 @@ function OrderElement({ order }) {
       <div className="order">
         <h2>Order</h2>
         <p>{moment.unix(order.data.created).format("MMMM Do YYYY, h:mma")}</p>
+
         <p className="order__id">
           <small>Order Id: {order.id}</small>
         </p>
+        {order.data.buyer_info ? (
+          <div>
+            <strong>
+              Ships to:{" "}
+              {order.data.buyer_info.fullName.charAt(0).toUpperCase() +
+                order.data.buyer_info.fullName.slice(1)}
+            </strong>
+            <p>
+              Address:{" "}
+              {order.data.buyer_info.address.charAt(0).toUpperCase() +
+                order.data.buyer_info.address.slice(1) +
+                ", " +
+                order.data.buyer_info.city.charAt(0).toUpperCase() +
+                order.data.buyer_info.city.slice(1) +
+                ", " +
+                order.data.buyer_info.state.toUpperCase() +
+                ", " +
+                order.data.buyer_info.zipcode}{" "}
+            </p>
+          </div>
+        ) : (
+          <></>
+        )}
         {order.data.cart?.map((item) => (
           <CartProduct
             id={item.id}
