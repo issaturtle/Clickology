@@ -95,7 +95,7 @@ function Product({
           amount: 1,
         },
       });
-    }, 1000);
+    }, 0);
 
     addedToCartNotif(title);
   }

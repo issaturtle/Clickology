@@ -18,9 +18,10 @@ function HungProductPage() {
     rating: 0,
     title: "",
     reviews: [],
+    amount: 1,
   });
   let timer;
-  const addTocart = () => {
+  function addTocart() {
     timer = setTimeout(() => {
       dispatch({
         type: "ADD_CART",
@@ -34,8 +35,8 @@ function HungProductPage() {
           amount: 1,
         },
       });
-    }, 1000);
-  };
+    }, 0);
+  }
   const turnOverlay = () => {
     if (overlayStatus === false) {
       setoverlayStatus(true);
@@ -56,6 +57,7 @@ function HungProductPage() {
         rating: state.productList[param.id].rating,
         title: state.productList[param.id].title,
         reviews: state.productList[param.id].reviews,
+        amount: 1,
       });
     };
 
@@ -69,8 +71,10 @@ function HungProductPage() {
           <h1>Return policy</h1>
           <p>
             you dont but please contact{" "}
-            <a href="mailto:1234@gmail.com">1234@gmail.com</a> for more
-            information
+            <a href="mailto:1234@gmail.com" style={{ color: "black" }}>
+              1234@gmail.com
+            </a>{" "}
+            for more information
           </p>
         </div>
       </div>
@@ -167,7 +171,7 @@ function HungProductPage() {
                   </div>
                   <div>{item.user_review}</div>
                 </div>
-                <div className="divider"></div>
+                <div className="divider__productPage"></div>
               </>
             ))
           ) : (

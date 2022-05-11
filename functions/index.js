@@ -28,29 +28,29 @@ app.post("/payment/create", async (req, res) => {
   });
 });
 
-app.post("/product", async (req, res) => {
-  console.log(req.query.id);
-  res.status(201).send(productList[req.query.id]);
-});
-const YOUR_DOMAIN = "http://localhost:3000";
+// app.post("/product", async (req, res) => {
+//   console.log(req.query.id);
+//   res.status(201).send(productList[req.query.id]);
+// });
+// const YOUR_DOMAIN = "http://localhost:3000";
 
-app.post("/create-checkout-session", async (req, res) => {
-  const session = await stripe.checkout.sessions.create({
-    line_items: [
-      {
-        // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-        price: "pr_1234",
-        quantity: 1,
-      },
-    ],
-    mode: "payment",
-    success_url: `${YOUR_DOMAIN}/success.html`,
-    cancel_url: `${YOUR_DOMAIN}/cancel.html`,
-    automatic_tax: { enabled: true },
-  });
-  console.log(session);
-  res.redirect(303, session.url);
-});
+// app.post("/create-checkout-session", async (req, res) => {
+//   const session = await stripe.checkout.sessions.create({
+//     line_items: [
+//       {
+//         // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
+//         price: "pr_1234",
+//         quantity: 1,
+//       },
+//     ],
+//     mode: "payment",
+//     success_url: `${YOUR_DOMAIN}/success.html`,
+//     cancel_url: `${YOUR_DOMAIN}/cancel.html`,
+//     automatic_tax: { enabled: true },
+//   });
+//   console.log(session);
+//   res.redirect(303, session.url);
+// });
 exports.api = functions.https.onRequest(app);
 
 //http function initialized (http://localhost:5001/clickology-63112/us-central1/api).

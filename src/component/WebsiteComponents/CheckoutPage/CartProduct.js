@@ -36,17 +36,14 @@ function CartProduct({
     } else {
       setQuantity(
         <p>
-          Quantity:{" "}
-          <strong>
-            {state.cart[find_product_index_cart(state.cart, id)].amount}
-          </strong>
+          Quantity: <strong>{find_product_index_cart(state.cart, id)}</strong>
         </p>
       );
     }
   };
   useEffect(() => {
     createQuantity();
-  }, []);
+  }, [state.cart]);
   //send request to "store" to remove item from cart
   const removeCart = () => {
     dispatch({

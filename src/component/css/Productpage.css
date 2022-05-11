@@ -108,6 +108,9 @@
   margin-top: 0px;
   padding-bottom: 30px;
 }
+.productpage__containerRightDescDescription {
+  padding-inline: 10px;
+}
 .productpage__containerRightDescDescription ul {
   padding-bottom: 30px;
   padding-inline: 20px;

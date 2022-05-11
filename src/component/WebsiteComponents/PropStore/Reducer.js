@@ -137,7 +137,7 @@ export const calculate_cart_length = (cart) => {
 export const find_product_index_cart = (cart, id) => {
   if (cart) {
     const ind = cart.findIndex((cartItem) => cartItem.id === id);
-    return ind;
+    return cart[ind].amount;
   } else {
     return -1;
   }
@@ -173,7 +173,7 @@ const reducer = (state, action) => {
       };
     case "ADD_CART":
       let newBasket = [...state.cart];
-      const ind = newBasket.findIndex(
+      let ind = newBasket.findIndex(
         (cartItem) => cartItem.id === action.item.id
       );
 
@@ -182,6 +182,7 @@ const reducer = (state, action) => {
       } else {
         newBasket[ind].amount += 1;
       }
+      console.log(newBasket);
       return {
         ...state,
         cart: newBasket,
@@ -206,14 +207,13 @@ const reducer = (state, action) => {
     // });
 
     case "REMOVE_CART":
-      const index = state.cart.findIndex(
-        (cartItem) => cartItem.id === action.id
-      );
       let newCart = [...state.cart];
-      if (index >= 0) {
-        newCart.splice(index, 1);
-      }
+      const index = newCart.findIndex((cartItem) => cartItem.id === action.id);
 
+      if (index >= 0) {
+        console.log(newCart.splice(index, 1));
+      }
+      console.log(newCart);
       return {
         ...state,
         cart: newCart,
