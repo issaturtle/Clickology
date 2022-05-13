@@ -1,3 +1,5 @@
+const path = require("path");
+require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
 const functions = require("firebase-functions");
 const express = require("express");
 const cors = require("cors");
@@ -7,7 +9,7 @@ const { response } = require("express");
 const stripe = require("stripe")(
   "sk_test_51KquBTJ0wGZ0mBp5f8mdwiG1eb18HyfYKwbKMHAmLmvPeySTY6Ia8u1BuXmlbLdWOOFxKzN78cu18zMZBdzFbBw200YttCy7fJ"
 );
-const googleapi = "AIzaSyChtSnAURDVuSofMtKOLf7vOyU4koekHsM";
+
 const baseAddress = "https://maps.googleapis.com/maps/api/geocode/json";
 const productList = [
   {
@@ -42,14 +44,15 @@ app.post("/verifyAddy", async (req, res) => {
     .get("https://maps.googleapis.com/maps/api/geocode/json", {
       params: {
         address: address,
-        key: "AIzaSyChtSnAURDVuSofMtKOLf7vOyU4koekHsM",
+        key: `${process.env.REACT_APP_GOOGLEKEY}`,
       },
     })
     .then(function (response) {
+      console.log(response);
       res.status(201).send({
         status: response.data.status,
       });
-      res.send(response.data.status);
+      // res.send(response.data.status);
       // res.send(response.status);
     })
     .catch(function (error) {
