@@ -6,9 +6,7 @@ const cors = require("cors");
 const axios = require("axios");
 const axiosOptions = {};
 const { response } = require("express");
-const stripe = require("stripe")(
-  "sk_test_51KquBTJ0wGZ0mBp5f8mdwiG1eb18HyfYKwbKMHAmLmvPeySTY6Ia8u1BuXmlbLdWOOFxKzN78cu18zMZBdzFbBw200YttCy7fJ"
-);
+const stripe = require("stripe")(`${process.env.REACT_APP_STRIPE}`);
 
 const baseAddress = "https://maps.googleapis.com/maps/api/geocode/json";
 const productList = [
