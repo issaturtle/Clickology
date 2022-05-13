@@ -6,9 +6,17 @@ import { Link } from "react-router-dom";
 import "../../css/CartProduct.css";
 import { find_product_index_cart } from "../PropStore/Reducer";
 /**
- *
- * @param {id, rating,price, title, image}
- * @returns the product in cart within checkout page
+ * Component for rendering items in cart
+ * @param {String} id id of item
+ * @param {Int} rating rating of item
+ * @param {Float} price price of item
+ * @param {String} title title of item
+ * @param {image} image image of item
+ * @param {Boolean} hideRemove hide Remove item in cart button
+ * @param {Boolean} amountHistory Display "quantity" in History page or not
+ * @param {Int} amount Amount of item
+ * @param {Boolean} productList
+ * @returns Items in cart displayed in Checkout page.
  */
 function CartProduct({
   id,

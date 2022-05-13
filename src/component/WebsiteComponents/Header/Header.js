@@ -12,8 +12,8 @@ import "../../css/Header.css";
 import img from "../../img/withoutsticker.PNG";
 import { calculate_cart_length } from "../PropStore/Reducer";
 /**
- *
- * @returns The navBar of the website
+ * Component Header to return the navigation bar of the website
+ * @returns div of navigation bar
  */
 function Header() {
   const [state, dispatch] = useStateVal();
@@ -67,12 +67,6 @@ function Header() {
               </div>
             </div>
           </Link>
-          {/* <div className="header__navOption">
-					<div className="header__navOption">
-						<span className="header__navOptionOne">Your</span>
-						<span className="header__navOptionTwo">Prime</span>
-					</div>
-				</div> */}
           <Link to="/checkout">
             <div className="header__navBasket">
               <ShoppingBasketIcon />

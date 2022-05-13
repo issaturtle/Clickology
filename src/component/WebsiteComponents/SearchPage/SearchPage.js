@@ -2,7 +2,10 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 import CartProduct from "../CheckoutPage/CartProduct";
 import { useStateVal } from "../PropStore/ContextState";
-
+/**
+ * Get search query and send item to CartProduct component for render
+ * @returns The search page with CartProduct components
+ */
 function SearchPage() {
   const [state, dispatch] = useStateVal();
   const param = useParams();

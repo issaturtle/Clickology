@@ -7,63 +7,19 @@ import "../../css/Product.css";
 import { Link } from "react-router-dom";
 
 /**
+ * Component to return products of website
+ * Used by the Home component
+ * @param {String} id
+ * @param {Int} rating
+ * @param {Float} price
+ * @param {String} title
+ * @param {String} desc
+ * @param {Image} image
+ * @param {Function} addedToCartNotif
+ * @param {Function} addToProductList
  *
- * @param {id, rating, price, title, image, addedToCartNotif }
  * @returns A product on the homepage
  */
-// <<<<<<< newPayment
-// function Product({
-//   id,
-//   rating,
-//   price,
-//   title,
-//   image,
-//   addedToCartNotif,
-//   addToProductList,
-// }) {
-//   const [state, dispatch] = useStateVal();
-//   useEffect(() => {
-//     addToProductList(title);
-//   }, []);
-//   function addCart() {
-//     dispatch({
-//       type: "ADD_CART",
-//       item: {
-//         id: id,
-//         title: title,
-//         image: image,
-//         price: price,
-//         rating: rating,
-//         amount: 1,
-//       },
-//     });
-
-//     addedToCartNotif(title);
-//   }
-//   return (
-//     <div className="product zoom">
-//       <img src={image} alt="" />
-//       <div className="product__information">
-//         <p className="product__name">{title}</p>
-//         <p className="product__price">
-//           <small>$</small>
-//           <strong>{price}</strong>
-//         </p>
-//         <div className="product__handRating">
-//           {Array(rating)
-//             .fill()
-//             .map((_, i) => (
-//               <p>👏</p>
-//             ))}
-//         </div>
-//       </div>
-
-//       <button onClick={addCart}>
-//         <h4>Add to Cart</h4>
-//       </button>
-//     </div>
-//   );
-// =======
 function Product({
   id,
   rating,

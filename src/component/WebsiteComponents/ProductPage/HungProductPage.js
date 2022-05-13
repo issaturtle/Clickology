@@ -5,6 +5,10 @@ import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import "../../css/Productpage.css";
 import { useStateVal } from "../PropStore/ContextState";
 const str = "../../img/monster.jpg";
+/**
+ * Return a product page based on product id
+ *
+ */
 function HungProductPage() {
   const [state, dispatch] = useStateVal();
   const param = useParams();
@@ -21,6 +25,9 @@ function HungProductPage() {
     amount: 1,
   });
   let timer;
+  /**
+   * Sends "ADD_CART" to reducer
+   */
   function addTocart() {
     timer = setTimeout(() => {
       dispatch({
@@ -37,6 +44,9 @@ function HungProductPage() {
       });
     }, 0);
   }
+  /**
+   * Turns on overlay when clicked on "Return Policy" button
+   */
   const turnOverlay = () => {
     if (overlayStatus === false) {
       setoverlayStatus(true);

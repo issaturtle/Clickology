@@ -4,6 +4,11 @@ import "../../css/OrderElement.css";
 import CartProduct from "../CheckoutPage/CartProduct";
 import CurrencyFormat from "react-currency-format";
 import { useStateVal } from "../PropStore/ContextState";
+/**
+ * Take in object and passes them to CartProduct component for rendering.
+ * @param {Object} order Database object
+ * @returns Order history with CardProduct components
+ */
 function OrderElement({ order }) {
   const [state, dispatch] = useStateVal();
   return (

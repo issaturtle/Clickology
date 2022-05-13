@@ -24,12 +24,6 @@ function Totalamount() {
     console.log("hi");
     console.log(state.userN);
     if (state.userN != null && state.cart.length >= 1) {
-      //   fetch("/create-checkout-session", {
-      //     method: "POST",
-      //     headers: {
-      //       "Content-Type": "application/json",
-      //     },
-      //     body: JSON.stringify({}),
       navigateHistory("/payment");
     } else if (state.cart.length >= 1 && state.userN == null) {
       navigateHistory("/login");

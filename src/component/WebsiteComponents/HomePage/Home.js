@@ -33,21 +33,6 @@ function Home() {
       return [...oldArray, name];
     });
   };
-  // useEffect(() => {
-  //   console.log(state.cart);
-  // }, [state.cart]);
-  //not done
-  // useEffect(()=>{
-  // 	let elem = document.querySelectorAll('.home__contentRow')
-  // 	elem.forEach((item)=>{
-  // 		for(var i in item.children){
-  // 			console.log(item.children[i])
-  // 		}
-  // 	})
-  // 	// for (var i = 0; i < elem.length;  i++){
-  // 	// 	console.log(elem[i]);
-  // 	// }
-  // },[state.searchQuery])
   const removeNotif = (name) => {
     let newList = [...notifList];
 

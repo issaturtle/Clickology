@@ -8,6 +8,9 @@ import ape from "../../img/ape.jpg";
 import random from "../../img/top.png";
 import monster from "../../img/monster.jpg";
 import mutant from "../../img/Mutant.png";
+/**
+ * Initial state of website
+ */
 export const initState = {
   cart: [],
   userN: null,
@@ -105,13 +108,11 @@ export const initState = {
   ],
 };
 
-// export const calculateCart = (cart) => {
-//   let val = 0;
-//   cart.forEach((item) => {
-//     val += item.price;
-//   });
-//   return val;
-// };
+/**
+ * take in a cart and calculate total amount in cart
+ * @param {array} cart
+ * @returns {float} parseFloat
+ */
 export const calculate_cart = (cart) => {
   let val = 0;
   cart.forEach((item) => {
@@ -123,6 +124,11 @@ export const calculate_cart = (cart) => {
   });
   return parseFloat(val.toFixed(2));
 };
+/**
+ * Calculate length of cart
+ * @param {array} cart
+ * @returns {int}
+ */
 export const calculate_cart_length = (cart) => {
   let val = 0;
   cart.forEach((item) => {
@@ -134,6 +140,13 @@ export const calculate_cart_length = (cart) => {
   });
   return val;
 };
+/**
+ * find the item in the cart based on id
+ * return the amount for the item
+ * @param {array} cart
+ * @param {string} id
+ * @returns {int}
+ */
 export const find_product_index_cart = (cart, id) => {
   if (cart) {
     const ind = cart.findIndex((cartItem) => cartItem.id === id);
@@ -150,22 +163,6 @@ export const find_product_index_cart = (cart, id) => {
  */
 const reducer = (state, action) => {
   switch (action.type) {
-    // case "ADD_BASKET":
-    //   let newBasket = [...state.basket];
-    //   const ind = state.basket.findIndex(
-    //     (cartItem) => cartItem.id === action.item.id
-    //   );
-
-    //   if (ind === -1) {
-    //     newBasket = [...state.basket, action.item];
-    //   } else {
-    //     newBasket[ind].amount += 1;
-    //   }
-    //   return {
-    //     ...state,
-    //     basket: newBasket,
-    //   };
-
     case "SET_STATE_USER":
       return {
         ...state,
@@ -187,25 +184,6 @@ const reducer = (state, action) => {
         ...state,
         cart: newBasket,
       };
-
-    // return {
-    //   ...state,
-    //   cart: [...newBasket],
-    // };
-    // return state.cart.map((item, index) => {
-    //   if (item.id === action.item.id) {
-    //     newCart[index].amount += 1;
-    //     return {
-    //       ...state,
-    //       cart: [...newCart],
-    //     };
-    //   }
-    //   return {
-    //     ...state,
-    //     cart: [...state.cart, action.item],
-    //   };
-    // });
-
     case "REMOVE_CART":
       let newCart = [...state.cart];
       const index = newCart.findIndex((cartItem) => cartItem.id === action.id);

@@ -35,7 +35,7 @@ app.post("/payment/create", async (req, res) => {
     clientSecret: paymentInt.client_secret,
   });
 });
-app.post("/verifyAddy", async (req, res) => {
+app.post("/verifyAddress", async (req, res) => {
   var address =
     req.query.address + ", " + req.query.city + ", " + req.query.state;
   axios

@@ -19,6 +19,11 @@ import { dbase } from "../LoginPage/firebase";
 import "../../css/Payment.css";
 import command from "nodemon/lib/config/command";
 
+/**
+ * Renders the payment page
+ * Uses Stripe and Geocode to verify address and payments.
+ * @returns
+ */
 function Payment() {
   const [state, dispatch] = useStateVal();
   const [cartLength, setCartLength] = useState(0);
@@ -36,10 +41,19 @@ function Payment() {
   const stripeElements = useElements();
   const stripeClient = useStripe();
   const navigate = useNavigate();
+
+  /**
+   * Set the status of card
+   * @param {SyntheticEvent} e
+   *
+   */
   const handleCardChange = (e) => {
     setdisableCardInput(e.empty);
     setuserError(e.error ? e.error.message : "");
   };
+  /**
+   * call firebase server to return a client secret for payment
+   */
   const getClientScrt = async () => {
     const res = await stripeAxios({
       method: "post",
@@ -49,10 +63,14 @@ function Payment() {
     });
     setclientCardSecret(res.data.clientSecret);
   };
+  /**
+   * call firebase to verify valid address
+   * @returns {string} res The status of address's validity
+   */
   async function verifyAddress() {
     const res = await stripeAxios({
       method: "post",
-      url: "/verifyAddy",
+      url: "/verifyAddress",
       params: {
         address: address,
         city: city,
@@ -61,6 +79,10 @@ function Payment() {
     });
     return res;
   }
+  /**
+   * if valid address + valid card, confirmation request will be sent
+   * store user's purchase details in database
+   */
   async function confirmPayment() {
     const payWithStripe = await stripeClient
       .confirmCardPayment(clientCardSecret, {
@@ -100,6 +122,13 @@ function Payment() {
         navigate("/");
       });
   }
+  /**
+   * Wrapper class
+   * On submission, address and card checking will be called
+   * if there's an error with either one, return error
+   *
+   * @param {SyntheticEvent} e
+   */
   async function handleCardSubmit(e) {
     e.preventDefault();
     setProcessingCard(true);
@@ -125,7 +154,6 @@ function Payment() {
 
   useEffect(() => {
     getClientScrt();
-
     setCartLength(() => calculate_cart_length(state.cart));
     setCartTotal(() => calculate_cart(state.cart));
   }, [state.cart]);
@@ -205,11 +233,6 @@ function Payment() {
                 />
               </Form.Group>
             </Form>
-            {/* <form id="payment-form">
-              <div id="payment-element"></div>
-              <button id="submit">Subscribe</button>
-              <div id="error-message"></div>
-            </form> */}
           </div>
         </div>
         <div className="separator"></div>

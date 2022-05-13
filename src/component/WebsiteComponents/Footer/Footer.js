@@ -4,6 +4,10 @@ import img from "../../img/withoutsticker.PNG";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
+/**
+ * Component to render footer of the website
+ * @returns footer div
+ */
 function Footer() {
   return (
     <>
@@ -42,7 +46,6 @@ function Footer() {
           </tr>
         </table>
       </div>
-      {/* <div className="divider"></div> */}
     </>
   );
 }

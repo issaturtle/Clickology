@@ -6,11 +6,12 @@ import Totalamount from "./Totalamount";
 
 import "../../css/Checkout.css";
 import img from "../../img/withoutsticker.PNG";
-import img2 from "../../img/fullycolored.PNG";
 import { calculate_cart_length } from "../PropStore/Reducer";
 
 /**
- * @returns the checkout page component
+ * Renders the checkout page
+ * @returns Return the checkout page with all the
+ * cart products
  */
 function Checkout() {
   const [state, dispatch] = useStateVal();
