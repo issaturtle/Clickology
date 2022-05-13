@@ -1,14 +1,17 @@
 @charset "UTF-8";
+
 .productpage {
   display: flex;
   flex-direction: column;
   padding-inline: 300px;
   padding-top: 50px;
 }
+
 .productpage__review h1 {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+
 .productpage__userReview {
   display: flex;
   justify-content: space-between;
@@ -18,19 +21,23 @@
 .productpage__container {
   display: flex;
 }
+
 .productpage__containerLeft {
   flex-grow: 3;
   height: 700px;
 }
+
 .productpage__containerImage {
   object-fit: contain;
   height: 700px;
   width: 700px;
   margin-left: 0px;
 }
+
 .productpage__containerImage:hover {
   scale: 1.02;
 }
+
 .productpage__containerLeftContent {
   display: flex;
   flex-direction: column;
@@ -38,35 +45,44 @@
   flex-wrap: wrap;
   margin: 10px auto;
 }
+
 .productpage__containerRight {
   flex-grow: 1;
 }
+
 .productpage__containerRight h1 {
   margin: 0px;
 }
+
 .productpage__containerRightName h1 {
   font-weight: 900;
 }
+
 .productpage__containerRightPrice {
   padding-bottom: 20px;
   border-bottom: 1px solid lightgray;
 }
+
 .productpage__containerRightPrice h2 {
   margin: 0px;
   color: red;
 }
+
 .productpage__containerRightRating {
   display: flex;
 }
+
 .productpage__containerRightBtn {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
 }
+
 .productpage__containerRightBtn p {
   font-weight: 500;
   border-bottom: 1px solid black;
 }
+
 .productpage__containerRightBtn button {
   display: flex;
   justify-content: center;
@@ -82,14 +98,17 @@
   margin-top: 10px;
   box-shadow: 0px 4px 14px #a09cc0;
 }
+
 .productpage__containerRightBtn button:hover {
   background-color: #a09cc0;
   transition: 0.2s background-color ease-in-out;
 }
+
 .productpage__containerRightBtn button.disabled {
   background-color: gray;
   box-shadow: none;
 }
+
 .productpage__containerRightDesc {
   background-color: white;
   height: 300px;
@@ -98,30 +117,38 @@
   flex-direction: column;
   align-items: center;
 }
+
 .productpage__containerRightDescHeader {
   padding-top: 30px;
 }
+
 .productpage__containerRightDescTitle {
   padding: 0px;
 }
+
 .productpage__containerRightDescTitle P {
   margin-top: 0px;
   padding-bottom: 30px;
 }
+
 .productpage__containerRightDescDescription {
   padding-inline: 10px;
 }
+
 .productpage__containerRightDescDescription ul {
   padding-bottom: 30px;
   padding-inline: 20px;
 }
+
 .productpage__containerRightDescDescription ul li {
   padding-bottom: 5px;
 }
+
 .productpage__containerRightDescDescription ul {
   list-style: none;
   /* Remove default bullets */
 }
+
 .productpage__containerRightDescDescription ul li::before {
   content: "•";
   /* Add content: \2022 is the CSS Code/unicode for a bullet */
@@ -136,10 +163,12 @@
   margin-left: -1em;
   /* Also needed for space (tweak if needed) */
 }
+
 .productpage__containerRightDescDescription p {
   font-weight: 500;
   color: rgb(94, 94, 94);
 }
+
 .productpage__containerRightContent {
   display: flex;
   flex-direction: column;
@@ -165,6 +194,7 @@
   align-items: center;
   padding-top: 30px;
 }
+
 .mid button {
   background-color: gray;
   font-weight: 500;
@@ -192,6 +222,7 @@
   z-index: 2;
   cursor: pointer;
 }
+
 #overlay .content {
   display: flex;
   align-items: center;
@@ -212,9 +243,33 @@
   padding-inline: 20px;
   text-align: center;
 }
+
 #overlay .content h1 {
   padding: 10px;
 }
+
 #overlay .content p {
   padding: 10px;
+}
+
+@media screen and (max-width: 39em) {
+  .productpage {
+    display: block;
+    align-content: center;
+    padding-inline: 0;
+  } 
+  .productpage__container{
+    display: inline-block;
+    align-content: center;
+
+  }
+  .productpage__containerLeft{
+    height:350px;
+  }
+  .productpage__containerImage {
+  object-fit: contain;
+  height: 300px;
+  width: 300px;
+  margin-left: 0px;
+}
 }
