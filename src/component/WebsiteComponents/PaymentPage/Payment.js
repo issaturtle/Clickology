@@ -17,6 +17,7 @@ import stripeAxios from "./StripeAxios";
 import { dbase } from "../LoginPage/firebase";
 //css
 import "../../css/Payment.css";
+import command from "nodemon/lib/config/command";
 
 function Payment() {
   const [state, dispatch] = useStateVal();
@@ -39,14 +40,28 @@ function Payment() {
     setdisableCardInput(e.empty);
     setuserError(e.error ? e.error.message : "");
   };
-  function toFixed(number, decimals) {
-    var x = Math.pow(10, Number(decimals) + 1);
-    return (Number(number) + 1 / x).toFixed(decimals);
+  const getClientScrt = async () => {
+    const res = await stripeAxios({
+      method: "post",
+      url: `/payment/create?total=${
+        parseFloat(calculate_cart(state.cart) + 3).toPrecision(2) * 100
+      }`,
+    });
+    setclientCardSecret(res.data.clientSecret);
+  };
+  async function verifyAddress() {
+    const res = await stripeAxios({
+      method: "post",
+      url: "/verifyAddy",
+      params: {
+        address: address,
+        city: city,
+        state: user_state,
+      },
+    });
+    return res;
   }
-
-  async function handleCardSubmit(e) {
-    e.preventDefault();
-    setProcessingCard(true);
+  async function confirmPayment() {
     const payWithStripe = await stripeClient
       .confirmCardPayment(clientCardSecret, {
         payment_method: {
@@ -74,24 +89,43 @@ function Payment() {
         setSuccessfulCard(true);
         setuserError(null);
         setProcessingCard(false);
+        set_full_name("");
+        set_user_state("");
+        set_city("");
+        set_zipcode("");
+        set_address("");
         dispatch({
           type: "EMPTY_CART",
         });
         navigate("/");
       });
   }
+  async function handleCardSubmit(e) {
+    e.preventDefault();
+    setProcessingCard(true);
+    // verifyAddress().then((status) => {
+    //   if (status === "OK") {
+    //     confirmPayment();
+    //   } else {
+    //     console.log("wrong address retar");
+    //   }
+    // });
+    const status = await verifyAddress();
+    // console.log(status.data.status);
+    if (status.data.status === "OK") {
+      // console.log(status.data.status);
+      confirmPayment();
+    } else if (status.data.status === "ZERO_RESULTS") {
+      console.log(status.data.status);
+      console.log(document.querySelector("payment"));
+      document.getElementById("error").setAttribute("class", "form error");
+      setProcessingCard(false);
+    }
+  }
 
   useEffect(() => {
-    const getClientScrt = async () => {
-      const res = await stripeAxios({
-        method: "post",
-        url: `/payment/create?total=${
-          parseFloat(calculate_cart(state.cart) + 3).toPrecision(2) * 100
-        }`,
-      });
-      setclientCardSecret(res.data.clientSecret);
-    };
     getClientScrt();
+
     setCartLength(() => calculate_cart_length(state.cart));
     setCartTotal(() => calculate_cart(state.cart));
   }, [state.cart]);
@@ -108,7 +142,9 @@ function Payment() {
         </h1>
         <div className="payment__ContainerLeft__Details">
           <div className="payment__Title">
-            <h3 className="form">Delivery address</h3>
+            <h3 id="error" className="form">
+              Delivery address
+            </h3>
           </div>
           <div className="payment__Addr form">
             <Form>
