@@ -1,0 +1,61 @@
+.product {
+  background-color: white;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  border-radius: 20px;
+  margin: 10px;
+  padding: 20px;
+  max-height: 400px;
+  min-width: 100px;
+  width: 100%;
+}
+.product > img {
+  max-height: 200px;
+  width: 100%;
+  object-fit: fill;
+  margin-bottom: 15px;
+}
+.product__information {
+  /* height: 100px; */
+  margin-bottom: 15px;
+  /* padding-right: 100px; */
+}
+.product__price {
+  margin-top: 5px;
+}
+.product__handRating {
+  display: flex;
+  flex-direction: row;
+}
+.product__container {
+  object-fit: fill;
+}
+.product > button {
+  background: #6772a9;
+  /* border: 1px solid; */
+  border-radius: 5px;
+  height: 30px;
+  /* border-color: #a88734 #846a29; */
+  color: white;
+  margin-top: 10px;
+  width: 200px;
+  box-shadow: 0px 4px 14px #a09cc0;
+  border: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.product > button:hover {
+  background-color: #a09cc0;
+  transition: 0.2s background-color ease-in-out;
+}
+.zoom {
+  transition: transform 0.2s ease-in-out;
+}
+.zoom:hover {
+  transform: scale(1.02);
+  box-shadow: 0 3px 10px #a09cc0;
+}

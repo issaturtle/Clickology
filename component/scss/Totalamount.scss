@@ -1,0 +1,43 @@
+@import "variables";
+.totalAmount {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  // justify-content: space-between;
+  // height: 300px;
+  width: 300px;
+  padding: 30px;
+  margin-top: 1px;
+
+  border: 1px solid gray;
+  border-radius: 20px;
+  background-color: #f3f3f3;
+  margin-right: 20px;
+  gap: 20px 5px;
+  button {
+    // background-color: $gold;
+    // // border-color: #a88134 #9c7a31 #846a28;
+    // border: 1px solid;
+    // border-radius: 2px;
+    // height: 30px;
+    // width: 100%;
+    // color: #111;
+    // margin-top: 10px;
+    background: #6772a9;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    /* border-color: #a88734 #846a29; */
+    color: white;
+    margin-top: 10px;
+    box-shadow: 0px 4px 14px #a09cc0;
+    &:hover {
+      background-color: #a09cc0;
+      transition: 0.2s background-color ease-in-out;
+    }
+    &.disabled {
+      background-color: gray;
+      box-shadow: none;
+    }
+  }
+}

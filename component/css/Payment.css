@@ -1,0 +1,140 @@
+.payment {
+  justify-content: space-between;
+  padding: 30px;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  display: flex;
+  justify-content: center;
+  margin-inline: auto;
+  padding-inline: 30px;
+}
+@media (max-width: 39em) {
+  .payment {
+    display: block;
+  }
+}
+.payment__ContainerLeft {
+  padding-inline: 100px;
+  padding-top: 2rem;
+  width: 400px;
+  flex-grow: 4;
+  background-color: white;
+}
+@media (max-width: 39em) {
+  .payment__ContainerLeft {
+    padding-bottom: 2rem;
+    padding-inline: 38px;
+  }
+}
+.payment__ContainerLeft h1 {
+  color: #5f699c;
+  padding: 10px;
+  padding-left: 0px;
+  border-bottom: 1px solid lightgray;
+}
+.payment__ContainerLeft__Details {
+  padding-top: 25px;
+  padding-bottom: 2px;
+  color: #6772a9;
+}
+.payment__ContainerLeft .form {
+  padding-bottom: 10px;
+}
+.payment__ContainerLeft .payment__Form__Input {
+  padding: 0px;
+  border: 0px;
+  border-bottom: 1px solid black;
+  border-radius: 0px;
+}
+.payment__ContainerLeft .payment__CartItems {
+  color: #6772a9;
+}
+.payment__System {
+  padding-top: 10px;
+}
+.payment__ContainerRight {
+  flex-grow: 1;
+  display: flex;
+  grid-row-end: span 1;
+  background-color: rgb(234, 237, 237);
+  padding: 1.5rem;
+  padding-top: 2rem;
+  height: 100px;
+}
+.payment__ContainerRight h1 {
+  padding: 10px;
+  color: #5f699c;
+  padding-left: 0px;
+}
+.payment__Title {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  color: #5f699c;
+}
+.payment__Title p {
+  padding-bottom: 5px;
+}
+.payment__Title .lastFee {
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 10px;
+}
+.payment__block {
+  display: flex;
+  justify-content: space-between;
+}
+.payment__block p {
+  padding-bottom: 5px;
+}
+.payment__block__details {
+  padding-right: 50px;
+  width: fit-content;
+  display: flex;
+}
+.payment__Prices {
+  border-collapse: collapse;
+}
+.payment__Prices td {
+  padding-bottom: 10px;
+}
+.payment__Prices__Topics {
+  padding-right: 300px;
+  padding-bottom: 10px;
+}
+.payment__Prices__Nums {
+  text-align: right;
+  padding-right: 0px;
+}
+.payment__Prices__Nums__Last {
+  text-align: right;
+  border-bottom: 1px solid lightgray;
+}
+.payment__Prices__Total {
+  color: rgb(168, 28, 28);
+}
+.payment__Cartitems {
+  min-width: calc(100% - 4rem);
+  max-width: 400px;
+}
+.payment__Orderbtn {
+  background-color: #5f699c;
+  width: 100%;
+  color: white;
+  border-radius: 5px;
+  height: 30px;
+  margin-top: 10px;
+  box-shadow: 0px 4px 14px #a09cc0;
+  border: white;
+}
+.payment__Orderbtn:hover {
+  background-color: #a09cc0;
+  transition: 0.2s background-color ease-in-out;
+}
+
+.separator {
+  border-bottom: 1px solid lightgray;
+}
+
+.error {
+  color: red;
+}

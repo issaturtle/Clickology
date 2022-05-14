@@ -1,0 +1,249 @@
+@charset "UTF-8";
+.productpage {
+  display: flex;
+  flex-direction: column;
+  padding-inline: 300px;
+  padding-top: 50px;
+}
+.productpage__review h1 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.productpage__userReview {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+.productpage__container {
+  display: flex;
+}
+.productpage__containerLeft {
+  flex-grow: 3;
+  height: 700px;
+}
+.productpage__containerImage {
+  object-fit: contain;
+  height: 700px;
+  width: 700px;
+  margin-left: 0px;
+}
+.productpage__containerImage:hover {
+  scale: 1.02;
+}
+.productpage__containerLeftContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 10px auto;
+}
+.productpage__containerRight {
+  flex-grow: 1;
+}
+.productpage__containerRight h1 {
+  margin: 0px;
+}
+.productpage__containerRightName h1 {
+  font-weight: 900;
+}
+.productpage__containerRightPrice {
+  padding-bottom: 20px;
+  border-bottom: 1px solid lightgray;
+}
+.productpage__containerRightPrice h2 {
+  margin: 0px;
+  color: red;
+}
+.productpage__containerRightRating {
+  display: flex;
+}
+.productpage__containerRightBtn {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.productpage__containerRightBtn p {
+  font-weight: 500;
+  border-bottom: 1px solid black;
+}
+.productpage__containerRightBtn button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #6772a9;
+  border: none;
+  border-radius: 5px;
+  height: 40px;
+  width: 150px;
+  /* border-color: #a88734 #846a29; */
+  color: white;
+  font-weight: 700;
+  margin-top: 10px;
+  box-shadow: 0px 4px 14px #a09cc0;
+}
+.productpage__containerRightBtn button:hover {
+  background-color: #a09cc0;
+  transition: 0.2s background-color ease-in-out;
+}
+.productpage__containerRightBtn button.disabled {
+  background-color: gray;
+  box-shadow: none;
+}
+.productpage__containerRightDesc {
+  background-color: white;
+  height: 300px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.productpage__containerRightDescHeader {
+  padding-top: 30px;
+}
+.productpage__containerRightDescTitle {
+  padding: 0px;
+}
+.productpage__containerRightDescTitle P {
+  margin-top: 0px;
+  padding-bottom: 30px;
+}
+.productpage__containerRightDescDescription {
+  padding-inline: 10px;
+}
+.productpage__containerRightDescDescription ul {
+  padding-bottom: 30px;
+  padding-inline: 20px;
+}
+.productpage__containerRightDescDescription ul li {
+  padding-bottom: 5px;
+}
+.productpage__containerRightDescDescription ul {
+  list-style: none;
+  /* Remove default bullets */
+}
+.productpage__containerRightDescDescription ul li::before {
+  content: "•";
+  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: lightgray;
+  /* Change the color */
+  font-weight: bold;
+  /* If you want it to be bold */
+  display: inline-block;
+  /* Needed to add space between the bullet and the text */
+  width: 1em;
+  /* Also needed for space (tweak if needed) */
+  margin-left: -1em;
+  /* Also needed for space (tweak if needed) */
+}
+.productpage__containerRightDescDescription p {
+  font-weight: 500;
+  color: rgb(94, 94, 94);
+}
+.productpage__containerRightContent {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.divider__productPage {
+  width: 100%;
+  border-bottom: 1px solid lightgray;
+}
+
+.zoompp {
+  transition: transform 0.2s ease-in-out;
+}
+
+.zoompp:hover {
+  transform: scale(1.1);
+}
+
+.mid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+}
+.mid button {
+  background-color: gray;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlaybackground {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+}
+
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+#overlay .content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  z-index: 30;
+  background: #ffff00;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -100px;
+  position: absolute;
+  background-color: white;
+  width: 300px;
+  height: 300px;
+  border-radius: 30px;
+  padding-inline: 20px;
+  text-align: center;
+}
+#overlay .content h1 {
+  padding: 10px;
+}
+#overlay .content p {
+  padding: 10px;
+}
+@media (max-width: 39em) {
+  #overlay .content {
+    left: 30%;
+  }
+}
+
+@media screen and (max-width: 39em) {
+  .productpage {
+    display: block;
+    align-content: center;
+    padding-inline: 0;
+  }
+
+  .productpage__container {
+    display: inline-block;
+    align-content: center;
+  }
+
+  .productpage__containerLeft {
+    height: 350px;
+  }
+
+  .productpage__containerImage {
+    object-fit: contain;
+    height: 300px;
+    width: 300px;
+    margin-left: 0px;
+  }
+}
