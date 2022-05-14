@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+/* import React, {useEffect, useState} from 'react';
 import "../../css/Posts.css";
 import "../../css/Productpage.css";
 function Posts(){
@@ -62,4 +62,4 @@ function Posts(){
     )
 }
 
-export default Posts;
+export default Posts; */
