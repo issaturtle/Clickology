@@ -308,12 +308,6 @@ function Payment() {
             </table>
           </div>
           <div className="separator"></div>
-          <button
-            disabled={processingCard || disableCardInput || successfulCard}
-            className="payment__Orderbtn"
-          >
-            <span>{processingCard ? <p>Processing</p> : "Buy Now"}</span>
-          </button>
 
           <div className="payment__Title">
             <h1>Your Cart</h1>
