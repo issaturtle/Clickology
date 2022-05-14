@@ -27,7 +27,7 @@ function AddedNotification({
         msg.shift();
         setList(msg);
       }
-    }, delay);
+    }, 1000);
     return () => clearTimeout(timer);
   }, [messages]);
   return (

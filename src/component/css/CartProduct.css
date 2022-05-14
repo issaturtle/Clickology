@@ -17,6 +17,11 @@
   display: inline-block;
   background: none;
 }
+@media (max-width: 39em) {
+  .cartProduct__info button {
+    margin-top: 40px;
+  }
+}
 .cartProduct__image {
   object-fit: contain;
   height: 180px;

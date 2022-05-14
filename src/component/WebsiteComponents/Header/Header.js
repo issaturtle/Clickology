@@ -19,9 +19,7 @@ function Header() {
   const [state, dispatch] = useStateVal();
   const [search_bar, set_search_bar] = useState("");
 
-  useEffect(() => {
-    console.log(search_bar);
-  }, [search_bar]);
+  useEffect(() => {}, []);
   /**
    * update user status using firebase
    */
@@ -44,9 +42,22 @@ function Header() {
               set_search_bar(e.target.value);
             }}
           />
-          <Link to={{ pathname: "/searchPage/" + search_bar, state: state }}>
+          <div>
+            <span>
+              {search_bar === "" ? (
+                <SearchIcon className="header__searchIcon disabled" />
+              ) : (
+                <Link
+                  to={{ pathname: "/searchPage/" + search_bar, state: state }}
+                >
+                  <SearchIcon className="header__searchIcon" />
+                </Link>
+              )}
+            </span>
+          </div>
+          {/* <Link to={{ pathname: "/searchPage/" + search_bar, state: state }}>
             <SearchIcon className="header__searchIcon" />
-          </Link>
+          </Link> */}
         </div>
         <Link to="/login">
           <div className="header__navOption" onClick={callAuthen}>

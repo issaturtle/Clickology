@@ -132,13 +132,7 @@ function Payment() {
   async function handleCardSubmit(e) {
     e.preventDefault();
     setProcessingCard(true);
-    // verifyAddress().then((status) => {
-    //   if (status === "OK") {
-    //     confirmPayment();
-    //   } else {
-    //     console.log("wrong address retar");
-    //   }
-    // });
+
     const status = await verifyAddress();
     // console.log(status.data.status);
     if (status.data.status === "OK") {
