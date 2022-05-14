@@ -1,4 +1,4 @@
-/* import React, {useEffect, useState} from 'react';
+ import React, {useEffect, useState} from 'react';
 import "../../css/Posts.css";
 import "../../css/Productpage.css";
 function Posts(){
@@ -25,7 +25,7 @@ function Posts(){
         <div>
             <div className="divider__productPage"></div>
             {posts.map(post => (
-                {window.location.href === post.url &&
+                //{window.location.href === post.url &&
                 <>
                 <div className="productpage__userReview">
                   <div>
@@ -35,7 +35,8 @@ function Posts(){
                 </div>
                 <div className="divider__productPage"></div>
               </>
-                )))};
+                ))};
+                
             <div className = "create">
             <h2> Leave a Review </h2>
                 <form >
@@ -62,4 +63,4 @@ function Posts(){
     )
 }
 
-export default Posts; */
+export default Posts; 
