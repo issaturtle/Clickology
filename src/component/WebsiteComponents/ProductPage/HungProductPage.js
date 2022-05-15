@@ -4,12 +4,15 @@ import ArchiveIcon from "@mui/icons-material/Archive";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import "../../css/Productpage.css";
 import { useStateVal } from "../PropStore/ContextState";
+import Posts from "./Posts.js";
+
 const str = "../../img/monster.jpg";
 /**
  * Return a product page based on product id
  *
  */
 function HungProductPage() {
+
   const [state, dispatch] = useStateVal();
   const param = useParams();
   const [images, setImage] = useState("");
@@ -191,6 +194,7 @@ function HungProductPage() {
               </p>
             </div>
           )}
+          <div><Posts/></div>
         </div>
       </div>
     </>

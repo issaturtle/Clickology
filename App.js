@@ -1,6 +1,6 @@
 import "./App.css";
-import ProductDescription from "./component/WebsiteComponents/ProductPage/ProductDescription";
-import Product from "./component/WebsiteComponents/ProductPage/ProductDescription";
+import ProductDescription from "./src/component/WebsiteComponents/ProductPage/ProductDescription";
+import Product from "./src/component/WebsiteComponents/ProductPage/ProductDescription";
 import {
   BrowserRouter as Router,
   Routes,
@@ -12,20 +12,20 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import { useEffect, useState } from "react";
 
-import img from "./component/img/withoutsticker.PNG";
+import img from "./src/component/img/withoutsticker.PNG";
 
-import Checkout from "./component/WebsiteComponents/CheckoutPage/Checkout";
-import Login from "./component/WebsiteComponents/LoginPage/Login";
-import { authen } from "./component/WebsiteComponents/LoginPage/firebase";
-import { useStateVal } from "./component/WebsiteComponents/PropStore/ContextState";
-import Payment from "./component/WebsiteComponents/PaymentPage/Payment";
-import Orders from "./component/WebsiteComponents/OrderPage/Orders";
-import Header from "./component/WebsiteComponents/Header/Header";
-import Home from "./component/WebsiteComponents/HomePage/Home";
-import HungProductPage from "./component/WebsiteComponents/ProductPage/HungProductPage";
-import Footer from "./component/WebsiteComponents/Footer/Footer";
+import Checkout from "./src/component/WebsiteComponents/CheckoutPage/Checkout";
+import Login from "./src/component/WebsiteComponents/LoginPage/Login";
+import { authen } from "./src/component/WebsiteComponents/LoginPage/firebase";
+import { useStateVal } from "./src/component/WebsiteComponents/PropStore/ContextState";
+import Payment from "./src/component/WebsiteComponents/PaymentPage/Payment";
+import Orders from "./src/component/WebsiteComponents/OrderPage/Orders";
+import Header from "./src/component/WebsiteComponents/Header/Header";
+import Home from "./src/component/WebsiteComponents/HomePage/Home";
+import HungProductPage from "./src/component/WebsiteComponents/ProductPage/HungProductPage";
+import Footer from "./src/component/WebsiteComponents/Footer/Footer";
 import "./App.css";
-import SearchPage from "./component/WebsiteComponents/SearchPage/SearchPage";
+import SearchPage from "./src/component/WebsiteComponents/SearchPage/SearchPage";
 const stripeClient = loadStripe(
   "pk_test_51KquBTJ0wGZ0mBp51JdztrUS50BXLMqIyOIyw3RAMVgjMnzSLLe4lqgvZqt7SP2vIaZaUZufqrup5grkKksgHg2d00KNhxo7OL"
 );
