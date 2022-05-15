@@ -12,7 +12,6 @@ const str = "../../img/monster.jpg";
  *
  */
 function HungProductPage() {
-
   const [state, dispatch] = useStateVal();
   const param = useParams();
   const [images, setImage] = useState("");
@@ -85,7 +84,7 @@ function HungProductPage() {
           <p>
             you dont but please contact{" "}
             <a href="mailto:1234@gmail.com" style={{ color: "black" }}>
-              1234@gmail.com
+              Clickology@gmail.com
             </a>{" "}
             for more information
           </p>
@@ -194,7 +193,9 @@ function HungProductPage() {
               </p>
             </div>
           )}
-          <div><Posts/></div>
+          <div>
+            <Posts id={param.id} />
+          </div>
         </div>
       </div>
     </>

@@ -1,46 +1,49 @@
- /* create new post */
+/* create new post */
 .create {
-    max-width: 400px;
-    margin: 0 auto;
-    text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
 }
 .create label {
-    text-align: left;
-    display: block;
+  text-align: left;
+  display: block;
 }
 
 .create h2 {
-    font-size: 20px;
-    color: #f1356d;
-    margin-bottom: 30px;
+  font-size: 20px;
+  color: #f1356d;
+  margin-bottom: 30px;
 }
 .create input {
-    width: 100%;
-    padding: 6px 10px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    box-sizing: border-box;
-    display: block;
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
 }
 
-.create textarea{
-    height: 240px;
-    width: 100%;
-    padding: 12px 20px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    font-size: 20px;
-    border-radius: 4px;
-    background-color: #f8f8f8;
+.create textarea {
+  height: 240px;
+  width: 100%;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  font-size: 20px;
+  border-radius: 4px;
+  background-color: #f8f8f8;
 }
 
 .create button {
-    background-color: gray;
-    font-weight: 500;   
-    background: #f1356d;
-    color: #fff;
-    border: 0;
-    padding: 8px;
-    border-radius: 8px;
-    cursor: pointer;
+  background-color: gray;
+  font-weight: 500;
+  background: #f1356d;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.disabled {
+  background-color: gray !important;
 }
