@@ -11,7 +11,7 @@ function Posts(id) {
   const [review, setReview] = useState("");
   const [state, dispatch] = useStateVal();
   const [status, setStatus] = useState(true);
-
+  var current = Date();
   const [posts, setPosts] = useState([]);
   //   async function addDB() {
   //     const test = dbase.collections("productPosts").collections(id).set({
@@ -42,6 +42,7 @@ function Posts(id) {
       .set({
         author: name,
         review: review,
+        created: Date.parse(current.toLocaleString()),
       });
     setPosts([
       ...posts,
@@ -56,23 +57,20 @@ function Posts(id) {
     setReview("");
   };
   useEffect(() => {
-    if (state.userN) {
-      dbase
-        .collection("productPosts")
-        .doc(id.id)
-        .collection("post")
-        .onSnapshot((snapshot) => {
-          return setPosts(
-            snapshot.docs.map((doc) => ({
-              id: doc.id,
-              data: doc.data(),
-            }))
-          );
-        });
-    } else {
-      setPosts([]);
-    }
-  }, [state.userN]);
+    dbase
+      .collection("productPosts")
+      .doc(id.id)
+      .collection("post")
+      .orderBy("created")
+      .onSnapshot((snapshot) => {
+        return setPosts(
+          snapshot.docs.map((doc) => ({
+            id: doc.id,
+            data: doc.data(),
+          }))
+        );
+      });
+  }, []);
   return (
     <div>
       <div className="divider__productPage"></div>
@@ -82,7 +80,11 @@ function Posts(id) {
           <>
             <div className="productpage__userReview">
               <div>
-                <strong>{post.data?.author}</strong>
+                <strong>
+                  {post.data?.author +
+                    " time posted:  " +
+                    Date(post.data?.created).toString().split(" ", 5).join(" ")}
+                </strong>
               </div>
               <div>{post.data?.review}</div>
             </div>
@@ -122,8 +124,9 @@ function Posts(id) {
               </button>
             ) : (
               <>
-                <Link to="/login"></Link>
-                <button>Login </button>
+                <Link to="/login">
+                  <button>Login </button>
+                </Link>
               </>
             )}
           </span>

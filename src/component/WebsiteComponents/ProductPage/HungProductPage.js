@@ -174,25 +174,7 @@ function HungProductPage() {
         <div className="productpage__review">
           <h1>REVIEWS</h1>
           <div className="divider__productPage"></div>
-          {productValues.reviews.length > 0 ? (
-            productValues.reviews.map((item) => (
-              <>
-                <div className="productpage__userReview">
-                  <div>
-                    <strong>{item.user}</strong>
-                  </div>
-                  <div>{item.user_review}</div>
-                </div>
-                <div className="divider__productPage"></div>
-              </>
-            ))
-          ) : (
-            <div>
-              <p style={{ color: "gray" }}>
-                Be the first to review <strong>{productValues.title}</strong>
-              </p>
-            </div>
-          )}
+
           <div>
             <Posts id={param.id} />
           </div>
