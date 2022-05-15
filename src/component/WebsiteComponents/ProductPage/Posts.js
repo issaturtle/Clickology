@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "../../css/Posts.css";
 import "../../css/Productpage.css";
+import { useStateVal } from "../PropStore/ContextState";
 function Posts() {
   const [name, setName] = useState("");
   const [review, setReview] = useState("");
-
+  const [state, dispatch] = useStateVal();
   const [posts, setPosts] = useState([
     {
       id: 0,
@@ -14,7 +15,8 @@ function Posts() {
     },
   ]);
 
-  const addPost = () => {
+  const addPost = (e) => {
+    e.preventDefault();
     setPosts([
       ...posts,
       {
@@ -25,7 +27,7 @@ function Posts() {
       },
     ]);
   };
-
+  useEffect(() => {});
   return (
     <div>
       <div className="divider__productPage"></div>

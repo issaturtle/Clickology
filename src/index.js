@@ -1,20 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { StateProv } from './component/WebsiteComponents/PropStore/ContextState';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { StateProv } from "./component/WebsiteComponents/PropStore/ContextState";
 import reducer, {
-	initState,
-} from './component/WebsiteComponents/PropStore/Reducer';
+  initState,
+} from "./component/WebsiteComponents/PropStore/Reducer";
 
 ReactDOM.render(
-	<React.StrictMode>
-		<StateProv initState={initState} reducer={reducer}>
-			<App />
-		</StateProv>
-	</React.StrictMode>,
-	document.getElementById('root')
+  <React.StrictMode>
+    <StateProv initState={initState} reducer={reducer}>
+      <App />
+    </StateProv>
+  </React.StrictMode>,
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
