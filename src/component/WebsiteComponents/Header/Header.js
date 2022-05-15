@@ -89,8 +89,19 @@ function Header() {
         </div>
       </div>
       <div class="header__menu">
-        <a href="order">Order History</a>
-        <a href="login">Login</a>
+        <Link to="/order">
+          <a href="order">Order History</a>
+        </Link>
+        {state.user ? (
+          <Link to="/Login">
+            <a href="Login">Login</a>
+          </Link>
+        ) : (
+          <a href="Login" onClick={callAuthen}>
+            Logout
+          </a>
+        )}
+
         <Link to="/checkout">
           <a href="">Cart</a>
         </Link>
