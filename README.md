@@ -1,5 +1,5 @@
 # Clickology
-Please refer to the [Contribution guidelines for this project](docs/CONTRIBUTING.md) on how to set up the project
+Please refer to the [Contribution guidelines for this project](/instructions) on how to set up the project
 
 An ecommerce featuring physical nfts with card payment verification using Stripe and Geocode API. Users will also be authenticated using Firebase and their realtime database.
 
