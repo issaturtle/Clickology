@@ -3,6 +3,7 @@ Apis Used(Refer to the Step_By_Step_Instructions.txt):
 		Chatbot,
 		Geocoding,
 		Stripe
+		
 Packages for front end: 
 		"@emotion/react": "^11.9.0",
 		"@emotion/styled": "^11.8.1",
