@@ -9,8 +9,9 @@ An ecommerce featuring physical nfts with card payment verification using Stripe
 - Rendered front‑end features using React hooks to improve component reusability and user experience which shortened development time.
 - Used Node.js to handle user payment queries through the Stripe API, resulting in automated tax collection.
 
-# How to run
+# How to run 
 Please refer to the [Instruction folder](https://github.com/issaturtle/Clickology/tree/master/Instructions) on how to set up the project
 
-# How to pay
-Please refer to the Demo in the Step-By-Step instructions
+# How to pay within the shop as demo
+1. User shipping information: Input a valid address 
+2. Payment: repetition of "42" throughout the card number, cvv, and expiration date
