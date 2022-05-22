@@ -13,4 +13,4 @@ An ecommerce featuring physical nfts with card payment verification using Stripe
 Please refer to the [Instruction folder](https://github.com/issaturtle/Clickology/tree/master/Instructions) on how to set up the project
 
 # How to pay
-- The card number, expiration date, and cvv are all 4242424242442424
+Please refer to the Demo in the Step-By-Step instructions
