@@ -10,9 +10,7 @@ An ecommerce featuring physical nfts with card payment verification using Stripe
 - Used Node.js to handle user payment queries through the Stripe API, resulting in automated tax collection.
 
 # How to run
-- Install required dependency for frontend and backend through npm
-- Go to console and type in "npm start" in the directory folder for the front end side.
-- Navigate to the "function" folder and input "firebase emulators:start" to start up the back end
-- Create a .env file with your api keys for firebase, google api, and stripe api
+Please refer to the [Instruction folder](https://github.com/issaturtle/Clickology/tree/master/Instructions) on how to set up the project
+
 # How to pay
 - The card number, expiration date, and cvv are all 4242424242442424
